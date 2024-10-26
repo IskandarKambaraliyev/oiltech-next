@@ -3,19 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* --- Colors Start --- */
+  /* Blue */
+  --color-blue-750: #012f50;
+  --color-blue-main: #01426a;
+  --color-blue-600: #01426ae0;
+  --color-blue-500: #01426a99;
+  --color-blue-400: #01426a66;
+  --color-blue-300: #01426a1f;
+  --color-blue-200: #01426a14;
+  --color-blue-100: #01426a0f;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Green */
+  --color-green-main: #00c6b7;
+  --color-green-600: #00c6b7e0;
+  --color-green-500: #00c6b799;
+  --color-green-400: #00c6b766;
+  --color-green-300: #00c6b71f;
+  --color-green-200: #00c6b714;
+  --color-green-100: #00c6b70f;
+  --color-green-50: #eefffc;
+
+  /* White */
+  --color-white-main: #ffffff;
+  --color-white-600: #ffffffe0;
+  --color-white-500: #ffffffa3;
+  --color-white-400: #ffffff66;
+  --color-white-300: #ffffff2e;
+  --color-white-200: #ffffff1f;
+  --color-white-100: #ffffff0f;
+  /* --- Colors End --- */
+
+  /* --- Shadows Start --- */
+  --shadow-btn: 0 0.25rem 2rem #00847a80;
+  /* --- Shadows End --- */
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-white-main);
+  background: var(--color-blue-main);
+  font-family: var(--font-gilroy), sans-serif;
 }

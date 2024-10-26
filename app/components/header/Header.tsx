@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderLogo from "./Logo";
 import LangSwitcher from "./LangSwitcher";
+import HeaderSearch from "./Search";
 
 const Header = () => {
   return (
@@ -10,6 +11,7 @@ const Header = () => {
           <HeaderLogo className="w-[6rem] md:w-[9rem] h-auto" />
 
           <div className="flex items-center gap-4">
+            <HeaderSearch />
             <LangSwitcher />
           </div>
         </div>

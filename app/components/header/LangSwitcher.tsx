@@ -1,5 +1,6 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+
+import { useEffect, useRef, useState } from "react";
 import { CustomCircleButton } from "../custom/buttons";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocale } from "next-intl";

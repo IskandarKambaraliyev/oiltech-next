@@ -35,7 +35,9 @@
   /* --- Colors End --- */
 
   /* --- Shadows Start --- */
-  --shadow-btn: 0 0.25rem 2rem #00847a80;
+  --shadow-btn-green: 0 0.25rem 2rem #00847a80;
+  --shadow-btn-blue: 0 0.25rem 2rem #01426a80;
+  --shadow-btn-white: 0 0.25rem 2rem #ffffff80;
   /* --- Shadows End --- */
 
   /* --- Spacing Start --- */

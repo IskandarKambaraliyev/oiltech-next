@@ -1,19 +1,18 @@
 import React from "react";
 import HeaderLogo from "./Logo";
-import CustomButton from "../custom/buttons/Button";
-import CustomCircleButton from "../custom/buttons/Circle";
+import LangSwitcher from "./LangSwitcher";
 
 const Header = () => {
   return (
-    <header>
+    <header className="h-20 md:h-[6.5rem] flex-center z-header">
       <div className="container flex items-center justify-between">
-        <HeaderLogo />
+        <div className="flex items-center gap-8">
+          <HeaderLogo className="w-[6rem] md:w-[9rem] h-auto" />
 
-        <CustomButton color="white" variant="solid">
-          Hello
-        </CustomButton>
-
-        <CustomCircleButton>rus</CustomCircleButton>
+          <div className="flex items-center gap-4">
+            <LangSwitcher />
+          </div>
+        </div>
       </div>
     </header>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { NextUIProvider } from "@nextui-org/system";
 
 const gilroy = localFont({
   src: [
@@ -51,7 +52,8 @@ const gilroy = localFont({
 
 export const metadata: Metadata = {
   title: "Oiltech Service",
-  description: "Высокое качество, инновационные сервисы и комплексный подход на рынке Узбекистана",
+  description:
+    "Высокое качество, инновационные сервисы и комплексный подход на рынке Узбекистана",
 };
 
 export default function RootLayout({
@@ -61,7 +63,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${gilroy.variable}`}>{children}</body>
+      <body className={`${gilroy.variable}`}>
+        <NextUIProvider>{children}</NextUIProvider>
+      </body>
     </html>
   );
 }

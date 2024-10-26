@@ -37,10 +37,55 @@
   /* --- Shadows Start --- */
   --shadow-btn: 0 0.25rem 2rem #00847a80;
   /* --- Shadows End --- */
+
+  /* --- Spacing Start --- */
+  --spacing-container: 1rem;
+  /* --- Spacing End --- */
+
+  /* --- Screen Start --- */
+  --screen-xl: 1440px;
+  --screen-lg: 1280px;
+  --screen-md: 768px;
+  --screen-sm: 640px;
+  /* --- Screen End --- */
 }
 
 body {
   color: var(--color-white-main);
   background: var(--color-blue-main);
   font-family: var(--font-gilroy), sans-serif;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: calc(1920px - 2 * var(--spacing-container));
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 2 * var(--spacing-container));
+}
+
+@media screen and (min-width: 1280px) {
+  :root {
+    --spacing-container: 3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --spacing-container: 2rem;
+  }
+}
+
+@utilities {
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inset-center: {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

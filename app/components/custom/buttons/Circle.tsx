@@ -13,11 +13,11 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   href?: string;
 };
 
-const CustomButton: FC<ButtonProps> = ({
+const CustomCircleButton: FC<ButtonProps> = ({
   children,
   onClick,
-  variant = "solid",
-  color = "green",
+  variant = "outlined",
+  color = "white",
   disabled,
   href,
   ...props
@@ -45,30 +45,27 @@ const CustomButton: FC<ButtonProps> = ({
   );
 };
 
-export default CustomButton;
+export default CustomCircleButton;
 
 function getClass(
   variant: "solid" | "outlined",
   color: "green" | "blue" | "white"
 ) {
   const baseClasses =
-    "py-4 px-10 active:opacity-90 transition-all flex items-center gap-2";
+    "size-14 flex-center overflow-hidden rounded-full active:opacity-90 text-sm transition-all";
 
   return classNames(baseClasses, {
-    "bg-green-main text-white-main hover:shadow-btn-green":
-      variant === "solid" && color === "green",
-    "bg-blue-main text-white-main hover:shadow-btn-blue":
-      variant === "solid" && color === "blue",
-    "bg-white-main text-blue-main hover:shadow-btn-white":
-      variant === "solid" && color === "white",
+    "bg-green-main text-white-main ": variant === "solid" && color === "green",
+    "bg-blue-main text-white-main": variant === "solid" && color === "blue",
+    "bg-white-main text-blue-main": variant === "solid" && color === "white",
 
-    "bg-black/10 border border-green-main text-green-main hover:bg-green-main hover:text-white-main hover:shadow-btn-green backdrop-blur":
+    "border border-green-main text-green-main hover:bg-green-main hover:text-white-main ":
       variant === "outlined" && color === "green",
 
-    "bg-black/10 border border-blue-main text-blue-main hover:bg-blue-main hover:text-white-main hover:shadow-btn-blue backdrop-blur":
+    "border border-blue-main text-blue-main hover:bg-blue-main hover:text-white-main":
       variant === "outlined" && color === "blue",
 
-    "bg-black/10 border border-white-main text-white-main hover:bg-white-main hover:text-blue-main hover:shadow-btn-white backdrop-blur":
+    "border border-white-main text-white-main hover:bg-white-main hover:text-blue-main":
       variant === "outlined" && color === "white",
   });
 }

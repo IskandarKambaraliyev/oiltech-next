@@ -41,7 +41,9 @@ const config: Config = {
         "white-100": "var(--color-white-100)",
       },
       boxShadow: {
-        "shadow-btn": "var(--shadow-btn)",
+        "btn-green": "var(--shadow-btn-green)",
+        "btn-blue": "var(--shadow-btn-blue)",
+        "btn-white": "var(--shadow-btn-white)",
       },
       screens: {
         lg: "1280px",

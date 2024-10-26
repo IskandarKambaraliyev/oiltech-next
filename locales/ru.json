@@ -2,5 +2,13 @@
   "HomePage": {
     "title": "Privet!",
     "about": "Go to the about page"
+  },
+  "Header": {
+    "home": "Главная",
+    "services": "Услуги",
+    "blog": "Блог",
+    "about": "О нас",
+    "contacts": "Контакты",
+    "catalog": "Получить каталог"
   }
 }

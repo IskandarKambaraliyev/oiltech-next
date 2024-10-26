@@ -2,5 +2,13 @@
   "HomePage": {
     "title": "Salom",
     "about": "Go to the about page"
+  },
+  "Header": {
+    "home": "Bosh sahifa",
+    "services": "Xizmatlar",
+    "blog": "Blog",
+    "about": "Biz haqimizda",
+    "contacts": "Kontaktlar",
+    "catalog": "Katalogni olish"
   }
 }

@@ -3,6 +3,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Header from "../components/header/Header";
+import { DataProvider } from "../context/DataContext";
 
 export default async function LocaleLayout({
   children,
@@ -23,9 +24,11 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <Header />
+      <DataProvider>
+        <Header />
 
-      {children}
+        {children}
+      </DataProvider>
     </NextIntlClientProvider>
   );
 }

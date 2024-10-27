@@ -12,5 +12,6 @@
     "catalog": "Katalogni olish",
     "search": "Qidirish",
     "no_results": "Natijalar topilmadi"
-  }
+  },
+  "get_catalog": "Katalogni olish"
 }

@@ -47,9 +47,8 @@ const config: Config = {
         "btn-white": "var(--shadow-btn-white)",
       },
       screens: {
+        xl: "1650px",
         lg: "1280px",
-        md: "768px",
-        xl: "1600px",
       },
       zIndex: {
         "header-1": "4",

@@ -150,3 +150,77 @@ export const PhoneICon = ({ className }: { className?: string }) => {
     </svg>
   );
 };
+
+export const XIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${className ? className : ""}`}
+    >
+      <path
+        d="M12.5 3.5L3.5 12.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12.5 12.5L3.5 3.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const PlayIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      width="18"
+      height="22"
+      viewBox="0 0 18 22"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${className ? className : ""}`}
+    >
+      <path
+        d="M18 11L9.2855e-07 21.3923L1.83707e-06 0.607695L18 11Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+export const ReturnIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${className ? className : ""}`}
+    >
+      <path
+        d="M16 20L22 26L28 20"
+        stroke="#00C6B7"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4 8H22V26"
+        stroke="#00C6B7"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

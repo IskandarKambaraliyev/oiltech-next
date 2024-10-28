@@ -13,5 +13,11 @@
     "search": "Qidirish",
     "no_results": "Natijalar topilmadi"
   },
+  "Home": {
+    "watch_video": "Videoni ko‘rish",
+    "our_services": "Bizning xizmatlar",
+    "main_services": "Bizning asosiy xizmatlar",
+    "find_out_more": "Ko‘proq ma’lumot"
+  },
   "get_catalog": "Katalogni olish"
 }

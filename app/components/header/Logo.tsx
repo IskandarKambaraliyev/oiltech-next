@@ -8,7 +8,7 @@ const HeaderLogo: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => {
       viewBox="0 0 147 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`${className}`}
+      className={`${className ? className : ""} w-[6rem] md:w-[9rem] h-auto`}
       {...props}
     >
       <path

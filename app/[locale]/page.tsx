@@ -1,10 +1,14 @@
 import React from "react";
+import { HomeHero, HomeQuote, HomeServices } from "../components/section/main";
 
 const HomePage = () => {
   return (
-    <div>
-      Home Page
-    </div>
+    <>
+      <HomeHero />
+      <HomeQuote />
+      <HomeServices />
+      <div className="w-full h-screen"></div>
+    </>
   );
 };
 

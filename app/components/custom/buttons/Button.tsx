@@ -52,7 +52,7 @@ function getClass(
   color: "green" | "blue" | "white"
 ) {
   const baseClasses =
-    "py-4 px-10 active:opacity-90 transition-all flex items-center gap-2";
+    "py-4 px-10 active:opacity-90 transition-all flex items-center gap-2 max-sm:w-full text-center";
 
   return classNames(baseClasses, {
     "bg-green-main text-white-main hover:shadow-btn-green":

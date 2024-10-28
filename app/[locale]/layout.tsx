@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Header from "../components/header/Header";
 import { DataProvider } from "../context/DataContext";
+import { ServicesProvider } from "../context/ServicesContext";
 
 export default async function LocaleLayout({
   children,
@@ -25,9 +26,11 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <DataProvider>
-        <Header />
+        <ServicesProvider>
+          <Header />
 
-        {children}
+          <main>{children}</main>
+        </ServicesProvider>
       </DataProvider>
     </NextIntlClientProvider>
   );

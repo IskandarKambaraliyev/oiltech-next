@@ -56,7 +56,7 @@ body {
   color: var(--color-white-main);
   background: var(--color-blue-main);
   font-family: var(--font-gilroy), sans-serif;
-  min-height: 100vh;
+  min-height: 200vh;
 }
 
 .container {
@@ -76,6 +76,31 @@ body {
     &::-webkit-scrollbar-thumb {
       @apply bg-blue-400;
       border-radius: 1rem;
+    }
+  }
+}
+
+.hero_swiper {
+  .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+    position: relative;
+    margin: 0 0.25rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -0.1875rem;
+      border: 0.0625rem solid transparent;
+      border-radius: 100%;
+    }
+
+    &-active {
+      background-color: var(--color-white-main);
+
+      &::before {
+        border: 0.0625rem solid var(--color-white-main);
+      }
     }
   }
 }

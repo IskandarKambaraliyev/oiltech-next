@@ -244,6 +244,7 @@ function SearchInput({
         placeholder={t("search")}
         type="text"
         className={`${className} flex-1 outline-none font-medium`}
+        autoComplete="off"
       />
 
       <div className="size-4">

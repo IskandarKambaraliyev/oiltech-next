@@ -75,10 +75,10 @@ export const BlogProvider: React.FC<BlogProviderProps> = ({ children }) => {
 };
 
 // Custom hook to use the BlogContext in any component
-export const useServices = (): BlogContextType => {
+export const useBlogs = (): BlogContextType => {
   const context = useContext(BlogContext);
   if (context === undefined) {
-    throw new Error("useServices must be used within a BlogProvider");
+    throw new Error("useBlogs must be used within a BlogProvider");
   }
   return context;
 };

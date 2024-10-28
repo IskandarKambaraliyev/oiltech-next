@@ -2,6 +2,7 @@ import React from "react";
 import {
   HomeAbout,
   HomeAdvantages,
+  HomeBlog,
   HomeHero,
   HomeQuote,
   HomeServices,
@@ -17,6 +18,7 @@ const HomePage = () => {
       <HomeAdvantages />
       <HomeAbout />
       <HomeTeam />
+      <HomeBlog />
 
       <div className="w-full h-screen"></div>
     </>

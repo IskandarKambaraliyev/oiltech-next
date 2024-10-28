@@ -23,5 +23,8 @@
   },
   "get_catalog": "Katalogni olish",
   "our_team": "Bizning jamoa",
-  "team_title": "Kuchli va ahil jamoa"
+  "team_title": "Kuchli va ahil jamoa",
+  "blog": "Blog",
+  "blog_title": "Foydali maqolalar",
+  "all": "Barchasi"
 }

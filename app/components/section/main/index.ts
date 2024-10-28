@@ -4,6 +4,7 @@ import HomeServices from "./Services";
 import HomeAdvantages from "./Advantages";
 import HomeAbout from "./About";
 import HomeTeam from "./Team";
+import HomeBlog from "./Blog";
 
 export {
   HomeHero,
@@ -12,4 +13,5 @@ export {
   HomeAdvantages,
   HomeAbout,
   HomeTeam,
+  HomeBlog,
 };

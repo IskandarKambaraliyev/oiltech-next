@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import Header from "../components/header/Header";
 import { DataProvider } from "../context/DataContext";
 import { ServicesProvider } from "../context/ServicesContext";
+import { BlogProvider } from "../context/BlogContext";
 
 export default async function LocaleLayout({
   children,
@@ -27,9 +28,11 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <DataProvider>
         <ServicesProvider>
-          <Header />
+          <BlogProvider>
+            <Header />
 
-          <main>{children}</main>
+            <main>{children}</main>
+          </BlogProvider>
         </ServicesProvider>
       </DataProvider>
     </NextIntlClientProvider>

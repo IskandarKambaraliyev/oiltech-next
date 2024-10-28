@@ -5,6 +5,7 @@ import {
   HomeHero,
   HomeQuote,
   HomeServices,
+  HomeTeam,
 } from "../components/section/main";
 
 const HomePage = () => {
@@ -15,6 +16,7 @@ const HomePage = () => {
       <HomeServices />
       <HomeAdvantages />
       <HomeAbout />
+      <HomeTeam />
 
       <div className="w-full h-screen"></div>
     </>

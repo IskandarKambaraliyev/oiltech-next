@@ -3,5 +3,13 @@ import HomeQuote from "./Quote";
 import HomeServices from "./Services";
 import HomeAdvantages from "./Advantages";
 import HomeAbout from "./About";
+import HomeTeam from "./Team";
 
-export { HomeHero, HomeQuote, HomeServices, HomeAdvantages, HomeAbout };
+export {
+  HomeHero,
+  HomeQuote,
+  HomeServices,
+  HomeAdvantages,
+  HomeAbout,
+  HomeTeam,
+};

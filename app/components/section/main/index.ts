@@ -2,5 +2,6 @@ import HomeHero from "./Hero";
 import HomeQuote from "./Quote";
 import HomeServices from "./Services";
 import HomeAdvantages from "./Advantages";
+import HomeAbout from "./About";
 
-export { HomeHero, HomeQuote, HomeServices, HomeAdvantages };
+export { HomeHero, HomeQuote, HomeServices, HomeAdvantages, HomeAbout };

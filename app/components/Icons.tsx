@@ -209,14 +209,14 @@ export const ReturnIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M16 20L22 26L28 20"
-        stroke="#00C6B7"
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M4 8H22V26"
-        stroke="#00C6B7"
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

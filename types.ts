@@ -16,3 +16,10 @@ export type BlogDetailApi = {
     product_description: string | null;
   }[];
 };
+
+export type SubmitApplicationFormResponse = {
+  status: "success" | "error";
+  message: string;
+  response?: Response;
+  error?: Error;
+};

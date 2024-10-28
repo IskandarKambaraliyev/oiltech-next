@@ -11,6 +11,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   color?: "green" | "blue" | "white";
   disabled?: boolean;
   href?: string;
+  type?: "button" | "submit" | "reset";
 };
 
 const CustomButton: FC<ButtonProps> = ({
@@ -20,6 +21,7 @@ const CustomButton: FC<ButtonProps> = ({
   color = "green",
   disabled,
   href,
+  type = "button",
   ...props
 }) => {
   if (href) {
@@ -38,6 +40,7 @@ const CustomButton: FC<ButtonProps> = ({
       className={`${getClass(variant, color)}`}
       onClick={onClick}
       disabled={disabled}
+      type={type}
       {...props}
     >
       {children}

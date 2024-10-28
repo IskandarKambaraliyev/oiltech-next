@@ -41,8 +41,9 @@
   "Form": {
     "title": "Ma’lumot qoldirish",
     "name": "Ismingiz",
-    "phone": "Telefon raqamingiz",
+    "contact": "Telefon raqam yoki email",
     "message": "Xabaringiz",
+    "company": "Kompaniyangiz nomi",
     "submit": "Yuborish"
   }
 }

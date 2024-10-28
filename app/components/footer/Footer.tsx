@@ -17,6 +17,7 @@ import {
   TimerIcon,
   WhatsappOutlinedIcon,
 } from "../Icons";
+import ApplicationForm from "../ApplicationForm";
 
 const Footer = () => {
   const t = useTranslations("Footer");
@@ -31,6 +32,27 @@ const Footer = () => {
         </div>
 
         <FooterLinks />
+
+        <div className="w-full h-[1px] bg-white-300 my-10"></div>
+
+        <div className="flex max-[1024px]:flex-col-reverse gap-x-4 gap-y-8 items-start">
+          <div className="max-[1024px]:w-full w-[20rem]">
+            <ApplicationForm />
+          </div>
+
+          <div className="flex-1 max-[1024px]:w-full">
+            <iframe
+              src="https://yandex.com/map-widget/v1/?ll=69.282440%2C41.296180&mode=search&oid=110181046271&ol=biz&z=17"
+              width="560"
+              height="365"
+              frameBorder="1"
+              allowFullScreen={true}
+              className="w-full max-[450px]:h-[250px] min-[450px]: h-[400px]"
+            ></iframe>
+          </div>
+        </div>
+
+        <p className="text-center text-white-500 mt-16">{t("text")}</p>
       </div>
     </footer>
   );
@@ -45,7 +67,7 @@ function FooterLinks() {
   if (data !== null) {
     return (
       <div className="flex items-start flex-wrap gap-x-16 gap-y-12">
-        <div className="min-w-[15rem] flex-1 flex flex-col gap-2">
+        <div className="max-sm:w-full sm:min-w-[20rem] sm:flex-1 flex flex-col gap-2">
           <div className="flex items-center gap-2 text-green-main">
             <NavigationIcon className="size-6" />
             <span>{t("address")}</span>

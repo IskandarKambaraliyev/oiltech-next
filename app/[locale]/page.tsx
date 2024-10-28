@@ -19,8 +19,6 @@ const HomePage = () => {
       <HomeAbout />
       <HomeTeam />
       <HomeBlog />
-
-      <div className="w-full h-screen"></div>
     </>
   );
 };

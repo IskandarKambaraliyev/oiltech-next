@@ -1,42 +1,36 @@
 import React from "react";
 import { CalendarIcon } from "../../Icons";
 import useDateFormatter from "@/app/hooks/useDateFormatter";
+import { cn } from "@/lib/utils";
+import HtmlWithModifiedImages from "../../custom/HtmlWithModifiedImages";
+import { BlogDetailApi } from "@/types";
 
 type Props = {
-  data: {
-    id: number;
-    title: string;
-    description: string;
-    service: {
-      id: number;
-      title: string;
-      image: string;
-    };
-    date_time: string;
-    image: string;
-    related_products: {
-      id: number;
-      title: string;
-      image: string;
-      description: string | null;
-    }[];
-  };
+  data: BlogDetailApi;
+  className?: string;
 };
 
-const BlogDeatail = ({ data }: Props) => {
+const BlogDeatail = ({ data, className }: Props) => {
   return (
-    <div className="container bg-white p-4 text-blue-main">
+    <div
+      className={cn(
+        "container !max-w-[75rem] bg-white p-4 md:p-6 text-blue-main",
+        className
+      )}
+    >
       <h1>{data.title}</h1>
-      <div className="w-full">
+      <div className="w-full aspect-[2/1] my-4">
         <img className="size-full object-cover" src={data.image} />
       </div>
 
-      <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
+      <HtmlWithModifiedImages data={data.description} />
 
-      <div className="flex items-center gap-8">
-        <div className="flex items-center">
+      <div className="flex items-center gap-8 mt-8">
+        <div className="flex items-center gap-2">
           <CalendarIcon />
-          <span>{useDateFormatter(data.date_time)}</span>
+          <span className="text-blue-400">
+            {useDateFormatter(data.date_time)}
+          </span>
         </div>
       </div>
     </div>

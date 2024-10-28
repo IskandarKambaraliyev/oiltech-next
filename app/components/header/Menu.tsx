@@ -10,12 +10,15 @@ import { Link } from "@/i18n/routing";
 import HeaderLogo from "./Logo";
 import { usePathname, useRouter } from "next/navigation";
 import { usePathname as localePathname } from "@/i18n/routing";
+import { useHeaderStates } from "@/app/context/HeaderContext";
 
 type Props = {
   className?: string;
 };
 
 const HeaderMenu = ({ className }: Props) => {
+  const { sticky, special } = useHeaderStates();
+
   const t = useTranslations();
   const pathname = usePathname();
 
@@ -55,7 +58,10 @@ const HeaderMenu = ({ className }: Props) => {
               <span>{data.phone_number1}</span>
             </CustomLink>
 
-            <CustomButton color="white" variant="outlined">
+            <CustomButton
+              color={special && !sticky ? "blue" : "white"}
+              variant="outlined"
+            >
               {t("get_catalog")}
             </CustomButton>
           </>
@@ -63,7 +69,10 @@ const HeaderMenu = ({ className }: Props) => {
       </div>
 
       <div className={`${className ? className : ""} xl:hidden`}>
-        <CustomCircleButton onClick={() => setIsOpen(!isOpen)}>
+        <CustomCircleButton
+          color={special && !sticky ? "blue" : "white"}
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <MenuIcon />
         </CustomCircleButton>
       </div>
@@ -75,7 +84,7 @@ const HeaderMenu = ({ className }: Props) => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3, type: "tween" }}
-            className="fixed inset-0 w-full h-screen bg-blue-750"
+            className="fixed inset-0 w-full h-screen bg-blue-750 text-white-main"
           >
             <div className="container h-20 md:h-[6.5rem] flex items-center justify-between">
               <Link href="/">
@@ -97,7 +106,10 @@ const HeaderMenu = ({ className }: Props) => {
                   <CustomMenuLink href="/about">
                     {t("Header.about")}
                   </CustomMenuLink>
-                  <CustomMenuLink href="#contacts">
+                  <CustomMenuLink
+                    href="#contacts"
+                    onClick={() => setIsOpen(false)}
+                  >
                     {t("Header.contacts")}
                   </CustomMenuLink>
 
@@ -143,7 +155,7 @@ function CustomLink({ href, children }: CustomLinkProps) {
     <a
       href={href}
       target="_blank"
-      className="p-2 flex items-center gap-1 opacity-80 hover:opacity-100 transition text-sm"
+      className="p-2 flex items-center gap-1 opacity-80 hover:opacity-100 text-sm"
     >
       {children}
     </a>
@@ -153,9 +165,10 @@ function CustomLink({ href, children }: CustomLinkProps) {
 type CustomMenuLinkProps = {
   href: string;
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
-function CustomMenuLink({ href, children }: CustomMenuLinkProps) {
+function CustomMenuLink({ href, children, onClick }: CustomMenuLinkProps) {
   const pathname = localePathname();
   return (
     <Link
@@ -163,6 +176,7 @@ function CustomMenuLink({ href, children }: CustomMenuLinkProps) {
       className={`${
         pathname === href ? "font-bold" : "opacity-80 hover:opacity-100"
       } px-4 text-xl`}
+      onClick={onClick}
     >
       {children}
     </Link>

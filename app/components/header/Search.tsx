@@ -8,6 +8,7 @@ import useClickOutside from "@/app/hooks/useClickOutside";
 import { useLocale, useTranslations } from "next-intl";
 import useApiRoute from "@/app/hooks/useApiRoute";
 import { Link } from "@/i18n/routing";
+import { useHeaderStates } from "@/app/context/HeaderContext";
 
 type SearchResultsApi = {
   title: string;
@@ -41,6 +42,7 @@ async function getSearchResults(
 }
 
 const HeaderSearch = () => {
+  const { special, sticky } = useHeaderStates();
   const locale = useLocale();
   const t = useTranslations("Header");
 
@@ -78,6 +80,7 @@ const HeaderSearch = () => {
       <div className="relative z-[1]">
         <CustomCircleButton
           onClick={() => setIsOpen(!isOpen)}
+          color={special && !isOpen && !sticky ? "blue" : "white"}
           variant={variant}
         >
           <SearchIcon />
@@ -132,6 +135,8 @@ const HeaderSearch = () => {
 export default HeaderSearch;
 
 export function HeaderSearchMobile() {
+  const { special, sticky } = useHeaderStates();
+
   const t = useTranslations("Header");
   const locale = useLocale();
 
@@ -163,7 +168,10 @@ export function HeaderSearchMobile() {
   }, [search, isOpen]);
   return (
     <>
-      <CustomCircleButton onClick={() => setIsOpen(!isOpen)}>
+      <CustomCircleButton
+        onClick={() => setIsOpen(!isOpen)}
+        color={special && !sticky ? "blue" : "white"}
+      >
         <SearchIcon />
       </CustomCircleButton>
 

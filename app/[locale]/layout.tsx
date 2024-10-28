@@ -6,6 +6,9 @@ import Header from "../components/header/Header";
 import { DataProvider } from "../context/DataContext";
 import { ServicesProvider } from "../context/ServicesContext";
 import { BlogProvider } from "../context/BlogContext";
+import { AnimatePresence } from "framer-motion";
+import { HeaderProvider } from "../context/HeaderContext";
+import Footer from "../components/footer/Footer";
 
 export default async function LocaleLayout({
   children,
@@ -28,17 +31,21 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <DataProvider>
-        <ServicesProvider>
-          <BlogProvider>
-            <Header />
+      <HeaderProvider>
+        <DataProvider>
+          <ServicesProvider>
+            <BlogProvider>
+              <Header />
 
-            <main>{children}</main>
+              <main>{children}</main>
 
-            {modal}
-          </BlogProvider>
-        </ServicesProvider>
-      </DataProvider>
+              <Footer />
+
+              {modal && <AnimatePresence>{modal}</AnimatePresence>}
+            </BlogProvider>
+          </ServicesProvider>
+        </DataProvider>
+      </HeaderProvider>
     </NextIntlClientProvider>
   );
 }

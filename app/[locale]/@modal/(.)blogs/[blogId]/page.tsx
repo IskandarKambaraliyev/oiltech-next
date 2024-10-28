@@ -1,27 +1,17 @@
 import InterceptedModal from "@/app/components/InterceptedModal";
 import BlogDeatail from "@/app/components/section/blogs/Detail";
 import useApiRoute from "@/app/hooks/useApiRoute";
-import { useLocale } from "next-intl";
+import { BlogDetailApi } from "@/types";
 import React from "react";
 
-type BlogDetailApi = {
-  id: number;
-  title: string;
-  description: string;
-  service: {
-    id: number;
-    title: string;
-    image: string;
-  };
-  date_time: string;
-  image: string;
-  related_products: {
-    id: number;
-    title: string;
-    image: string;
-    description: string | null;
-  }[];
-};
+async function getData(locale: string, blogId: string) {
+  return (await fetch(useApiRoute(`/blogs/${blogId}`, locale), {
+    cache: "force-cache",
+    next: {
+      revalidate: 600,
+    },
+  }).then((res) => res.json())) as BlogDetailApi;
+}
 
 export default async function BlogDetailPage({
   params,
@@ -29,12 +19,7 @@ export default async function BlogDetailPage({
   params: { blogId: string; locale: "ru" | "uz" };
 }) {
   const { locale, blogId } = await params;
-  const data = (await fetch(useApiRoute(`/blogs/${blogId}`, locale), {
-    cache: "force-cache",
-    next: {
-      revalidate: 600,
-    },
-  }).then((res) => res.json())) as BlogDetailApi;
+  const data = await getData(locale, blogId);
   return (
     <div>
       <InterceptedModal>

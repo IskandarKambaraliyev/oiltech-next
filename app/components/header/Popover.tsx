@@ -33,7 +33,7 @@ const HeaderPopover = () => {
       >
         <DropdownTrigger
           onMouseEnter={handleMouseEnter}
-          className="!opacity-80 hover:!opacity-100 transition !scale-100 cursor-pointer p-2"
+          className="!opacity-80 hover:!opacity-100 !scale-100 cursor-pointer p-2"
         >
           {t("services")}
         </DropdownTrigger>

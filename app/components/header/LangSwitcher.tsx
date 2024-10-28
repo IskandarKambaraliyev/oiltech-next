@@ -7,8 +7,11 @@ import { useLocale } from "next-intl";
 import useClickOutside from "@/app/hooks/useClickOutside";
 import { useRouter } from "next/navigation";
 import { usePathname } from "@/i18n/routing";
+import { useHeaderStates } from "@/app/context/HeaderContext";
 
 const LangSwitcher = () => {
+  const { special, sticky } = useHeaderStates();
+
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -42,6 +45,7 @@ const LangSwitcher = () => {
         <CustomCircleButton
           onClick={() => setIsOpen(!isOpen)}
           variant={variant}
+          color={special && !sticky ? "blue" : "white"}
         >
           {locale === "ru" ? "Рус" : "Uz"}
         </CustomCircleButton>

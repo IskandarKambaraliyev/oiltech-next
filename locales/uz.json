@@ -26,5 +26,23 @@
   "team_title": "Kuchli va ahil jamoa",
   "blog": "Blog",
   "blog_title": "Foydali maqolalar",
-  "all": "Barchasi"
+  "all": "Barchasi",
+  "Footer": {
+    "title": "Kontaktlar",
+    "contacts": "Biz bilan bog‘lanish",
+    "address": "Manzil",
+    "phone": "Telefon raqami",
+    "email": "Elektron pochta manzili",
+    "working_hours": "Ish vaqti",
+    "lunch": "Tushlik",
+    "socials": "Ijtimoiy tarmoqlar",
+    "text": "SP OOO «OILTECH SERVICE»"
+  },
+  "Form": {
+    "title": "Ma’lumot qoldirish",
+    "name": "Ismingiz",
+    "phone": "Telefon raqamingiz",
+    "message": "Xabaringiz",
+    "submit": "Yuborish"
+  }
 }

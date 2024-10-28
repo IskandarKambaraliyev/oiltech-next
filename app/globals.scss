@@ -52,11 +52,15 @@
   /* --- Screen End --- */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--color-white-main);
   background: var(--color-blue-main);
   font-family: var(--font-gilroy), sans-serif;
-  min-height: 200vh;
+  // min-height: 200vh;
 }
 
 .container {

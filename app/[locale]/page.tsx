@@ -1,5 +1,10 @@
 import React from "react";
-import { HomeHero, HomeQuote, HomeServices } from "../components/section/main";
+import {
+  HomeAdvantages,
+  HomeHero,
+  HomeQuote,
+  HomeServices,
+} from "../components/section/main";
 
 const HomePage = () => {
   return (
@@ -7,6 +12,8 @@ const HomePage = () => {
       <HomeHero />
       <HomeQuote />
       <HomeServices />
+      <HomeAdvantages />
+
       <div className="w-full h-screen"></div>
     </>
   );

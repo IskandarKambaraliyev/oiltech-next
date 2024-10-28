@@ -1,4 +1,5 @@
 import { BlogApi } from "@/app/context/BlogContext";
+import { Link } from "@/i18n/routing";
 import React from "react";
 
 type Props = {
@@ -6,7 +7,7 @@ type Props = {
 };
 
 const CardBlog = ({ item }: Props) => {
-  return <div>{item.title}</div>;
+  return <Link href={`/blogs/${item.id}`}>{item.title}</Link>;
 };
 
 export default CardBlog;

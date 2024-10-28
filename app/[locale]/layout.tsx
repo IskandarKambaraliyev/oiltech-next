@@ -9,9 +9,11 @@ import { BlogProvider } from "../context/BlogContext";
 
 export default async function LocaleLayout({
   children,
+  modal,
   params,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
   params: { locale: "ru" | "uz" };
 }) {
   const { locale } = await params;
@@ -32,6 +34,8 @@ export default async function LocaleLayout({
             <Header />
 
             <main>{children}</main>
+
+            {modal}
           </BlogProvider>
         </ServicesProvider>
       </DataProvider>

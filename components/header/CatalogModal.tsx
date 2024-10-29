@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
+import { AnimatePresence, motion } from "framer-motion";
+
+import useClickOutside from "@/app/hooks/useClickOutside";
+import { useHeaderStates } from "@/app/context/HeaderContext";
+
 import CustomTitle from "../custom/Title";
 import ApplicationForm from "../ApplicationForm";
-import { useTranslations } from "next-intl";
-import { useHeaderStates } from "@/app/context/HeaderContext";
-import { AnimatePresence, motion } from "framer-motion";
-import useClickOutside from "@/app/hooks/useClickOutside";
 import { XIcon } from "../Icons";
 
 const HeaderCatalogModal = () => {

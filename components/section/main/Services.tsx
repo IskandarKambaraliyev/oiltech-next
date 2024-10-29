@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import CustomSectionTitle from "../../custom/SectionTitle";
-import { useTranslations } from "next-intl";
-import CustomTitle from "../../custom/Title";
-import { useServices, type ServicesApi } from "@/app/context/ServicesContext";
-import { Link } from "@/i18n/routing";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+
+import { useServices, type ServicesApi } from "@/app/context/ServicesContext";
+
+import CustomSectionTitle from "../../custom/SectionTitle";
+import CustomTitle from "../../custom/Title";
 
 const HomeServices = () => {
   const t = useTranslations("Home");

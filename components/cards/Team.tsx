@@ -1,4 +1,3 @@
-import React from "react";
 import { LinkedinCircleIcon, TelegramCircleIcon } from "../Icons";
 
 type Props = {

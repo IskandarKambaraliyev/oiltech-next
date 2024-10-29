@@ -1,15 +1,18 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import Header from "../components/header/Header";
+import { notFound } from "next/navigation";
+
+import { AnimatePresence } from "framer-motion";
+
 import { DataProvider } from "../context/DataContext";
 import { ServicesProvider } from "../context/ServicesContext";
 import { BlogProvider } from "../context/BlogContext";
-import { AnimatePresence } from "framer-motion";
 import { HeaderProvider } from "../context/HeaderContext";
-import Footer from "../components/Footer";
-import HeaderCatalogModal from "../components/header/CatalogModal";
+
+import Header from "@/components/header/Header";
+import HeaderCatalogModal from "@/components/header/CatalogModal";
+import Footer from "@/components/Footer";
 
 export default async function LocaleLayout({
   children,

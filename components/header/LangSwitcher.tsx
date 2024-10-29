@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CustomCircleButton } from "../custom/buttons";
-import { AnimatePresence, motion } from "framer-motion";
-import { useLocale } from "next-intl";
-import useClickOutside from "@/app/hooks/useClickOutside";
 import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 import { usePathname } from "@/i18n/routing";
+import { AnimatePresence, motion } from "framer-motion";
+
+import useClickOutside from "@/app/hooks/useClickOutside";
 import { useHeaderStates } from "@/app/context/HeaderContext";
+
+import { CustomCircleButton } from "../custom/buttons";
 
 const LangSwitcher = () => {
   const { special, sticky } = useHeaderStates();

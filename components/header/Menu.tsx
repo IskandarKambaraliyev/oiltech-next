@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { CustomButton, CustomCircleButton } from "../custom/buttons";
-import { MailICon, MenuIcon, PhoneICon, XIcon } from "../Icons";
-import { useData } from "@/app/context/DataContext";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "@/i18n/routing";
-import HeaderLogo from "./Logo";
-import { usePathname, useRouter } from "next/navigation";
 import { usePathname as localePathname } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
+
+import { useData } from "@/app/context/DataContext";
 import { useHeaderStates } from "@/app/context/HeaderContext";
-import CustomTitle from "../custom/Title";
-import ApplicationForm from "../ApplicationForm";
+
+import { CustomButton, CustomCircleButton } from "../custom/buttons";
+import { MailICon, MenuIcon, PhoneICon, XIcon } from "../Icons";
+import HeaderLogo from "./Logo";
 
 type Props = {
   className?: string;

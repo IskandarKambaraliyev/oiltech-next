@@ -1,8 +1,9 @@
-import { BlogApi } from "@/app/context/BlogContext";
 import { Link } from "@/i18n/routing";
-import React from "react";
-import { CalendarIcon } from "../Icons";
+
+import { BlogApi } from "@/app/context/BlogContext";
 import useDateFormatter from "@/app/hooks/useDateFormatter";
+
+import { CalendarIcon } from "../Icons";
 
 type Props = {
   item: BlogApi;

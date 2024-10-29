@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
+
+import { useHeaderStates } from "@/app/context/HeaderContext";
+
 import HeaderLogo from "./Logo";
 import LangSwitcher from "./LangSwitcher";
 import HeaderSearch, { HeaderSearchMobile } from "./Search";
 import HeaderMenu from "./Menu";
-import { Link, usePathname } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
 import HeaderPopover from "./Popover";
-import { useHeaderStates } from "@/app/context/HeaderContext";
 
 const Header = () => {
   const t = useTranslations("Header");

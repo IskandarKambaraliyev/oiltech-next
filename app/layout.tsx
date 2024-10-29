@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.scss";
+
 import { NextUIProvider } from "@nextui-org/system";
+
+import "./globals.scss";
 
 const gilroy = localFont({
   src: [

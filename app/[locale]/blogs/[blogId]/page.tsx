@@ -1,8 +1,10 @@
-import BlogDeatail from "@/app/components/section/blogs/Detail";
-import useApiRoute from "@/app/hooks/useApiRoute";
-import { BlogDetailApi } from "@/types";
-
 import { convert } from "html-to-text";
+
+import BlogDeatail from "@/components/section/blogs/Detail";
+
+import useApiRoute from "@/app/hooks/useApiRoute";
+
+import { BlogDetailApi } from "@/types";
 
 async function getData(locale: string, blogId: string) {
   return (await fetch(useApiRoute(`/blogs/${blogId}`, locale), {

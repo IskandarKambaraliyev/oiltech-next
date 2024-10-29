@@ -1,10 +1,12 @@
 "use client";
 
-import useApiRoute from "@/app/hooks/useApiRoute";
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import React, { useEffect, useState } from "react";
+
 import CustomSectionTitle from "../../custom/SectionTitle";
 import CustomTitle from "../../custom/Title";
+
+import useApiRoute from "@/app/hooks/useApiRoute";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";

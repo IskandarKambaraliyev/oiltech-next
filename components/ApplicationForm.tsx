@@ -1,14 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { submitApplicationForm } from "../actions/submitApplicationForm";
 import { useLocale, useTranslations } from "next-intl";
-import { SubmitApplicationFormResponse } from "@/types";
-import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+
+import { submitApplicationForm } from "@/app/actions/submitApplicationForm";
+
 import { CustomButton } from "./custom/buttons";
 import { XIcon } from "./Icons";
-import useClickOutside from "../hooks/useClickOutside";
-import { AnimatePresence, motion } from "framer-motion";
+
+import { cn } from "@/lib/utils";
+import useClickOutside from "@/app/hooks/useClickOutside";
+
+import { SubmitApplicationFormResponse } from "@/types";
 
 type InputColor = "blue" | "white";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useBlogs } from "@/app/context/BlogContext";
-import React from "react";
+
 import CardBlog from "../cards/Blog";
 
 type Props = {

@@ -1,13 +1,15 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useEffect,
   ReactNode,
+  FC,
 } from "react";
+import { useLocale } from "next-intl";
+
 import useApiRoute from "../hooks/useApiRoute";
 
 export type ServicesApi = {
@@ -32,9 +34,7 @@ type ServicesProviderProps = {
   children: ReactNode;
 };
 
-export const ServicesProvider: React.FC<ServicesProviderProps> = ({
-  children,
-}) => {
+export const ServicesProvider: FC<ServicesProviderProps> = ({ children }) => {
   const [data, setData] = useState<ServicesApi[] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

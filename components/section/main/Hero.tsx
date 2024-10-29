@@ -1,6 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+
+import useApiRoute from "@/app/hooks/useApiRoute";
+
+import CustomTitle from "../../custom/Title";
+import { CustomButton } from "../../custom/buttons";
+
+import { PlayIcon } from "../../Icons";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -8,12 +17,6 @@ import { Pagination, Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-import useApiRoute from "@/app/hooks/useApiRoute";
-import { useLocale, useTranslations } from "next-intl";
-import CustomTitle from "../../custom/Title";
-import { CustomButton } from "../../custom/buttons";
-import { PlayIcon } from "../../Icons";
 
 type SlidesApi = {
   id: number;

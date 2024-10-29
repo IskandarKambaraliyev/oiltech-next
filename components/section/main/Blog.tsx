@@ -1,9 +1,9 @@
-import React from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+
 import BlogCards from "../BlogCards";
 import CustomSectionTitle from "../../custom/SectionTitle";
-import { useTranslations } from "next-intl";
 import CustomTitle from "../../custom/Title";
-import { Link } from "@/i18n/routing";
 import { CustomButton } from "../../custom/buttons";
 
 const HomeBlog = () => {

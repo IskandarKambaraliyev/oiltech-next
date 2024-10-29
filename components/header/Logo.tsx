@@ -1,4 +1,4 @@
-import React, { FC, SVGProps } from "react";
+import { FC, SVGProps } from "react";
 
 const HeaderLogo: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => {
   return (

@@ -1,7 +1,8 @@
 "use server";
 
-import { SubmitApplicationFormResponse } from "@/types";
 import useApiRoute from "../hooks/useApiRoute";
+
+import { SubmitApplicationFormResponse } from "@/types";
 
 export async function submitApplicationForm(
   formData: FormData,

@@ -1,14 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "@/i18n/routing";
+
+import useClickOutside from "@/app/hooks/useClickOutside";
+import useApiRoute from "@/app/hooks/useApiRoute";
+import { useHeaderStates } from "@/app/context/HeaderContext";
+
 import { CustomCircleButton } from "../custom/buttons";
 import { SearchIcon, SpinnerIcon } from "../Icons";
-import useClickOutside from "@/app/hooks/useClickOutside";
-import { useLocale, useTranslations } from "next-intl";
-import useApiRoute from "@/app/hooks/useApiRoute";
-import { Link } from "@/i18n/routing";
-import { useHeaderStates } from "@/app/context/HeaderContext";
 
 type SearchResultsApi = {
   title: string;

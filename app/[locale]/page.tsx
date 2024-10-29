@@ -7,7 +7,7 @@ import {
   HomeQuote,
   HomeServices,
   HomeTeam,
-} from "../components/section/main";
+} from "../../components/section/main";
 
 const HomePage = () => {
   return (

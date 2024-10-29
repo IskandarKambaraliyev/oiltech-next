@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import { FC } from "react";
 
 interface Props {
   data: string;
 }
 
-const HtmlWithModifiedImages: React.FC<Props> = ({ data }) => {
+const HtmlWithModifiedImages: FC<Props> = ({ data }) => {
   const addDomainToImageSrc = (html: string) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");

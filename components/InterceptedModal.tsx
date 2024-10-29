@@ -1,8 +1,12 @@
 "use client";
+
+// Importing Dependencies
 import { useRouter } from "next/navigation";
-import React, { ReactNode, useEffect } from "react";
-import { XIcon } from "./Icons";
+import { ReactNode, useEffect } from "react";
 import { motion } from "framer-motion";
+
+// Importing Icons
+import { XIcon } from "./Icons";
 
 type Props = {
   children: ReactNode;

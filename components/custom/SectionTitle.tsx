@@ -1,9 +1,11 @@
-import React from "react";
-import { ReturnIcon } from "../Icons";
+import { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
+import { ReturnIcon } from "../Icons";
+
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 };
 

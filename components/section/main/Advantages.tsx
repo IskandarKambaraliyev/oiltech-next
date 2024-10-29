@@ -1,7 +1,11 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useRef, useState } from "react";
+
 import useApiRoute from "@/app/hooks/useApiRoute";
 import { cn } from "@/lib/utils";
+
 import {
   motion,
   SpringOptions,
@@ -9,8 +13,7 @@ import {
   useTransform,
   useInView,
 } from "framer-motion";
-import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
+
 import CustomSectionTitle from "../../custom/SectionTitle";
 
 type AdvantegesApi = {

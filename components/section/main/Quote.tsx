@@ -1,5 +1,4 @@
 import { useLocale } from "next-intl";
-import React from "react";
 
 const HomeQuote = () => {
   const locale = useLocale();

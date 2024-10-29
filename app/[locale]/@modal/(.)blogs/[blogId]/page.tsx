@@ -1,8 +1,9 @@
-import InterceptedModal from "@/app/components/InterceptedModal";
-import BlogDeatail from "@/app/components/section/blogs/Detail";
+import InterceptedModal from "@/components/InterceptedModal";
+import BlogDeatail from "@/components/section/blogs/Detail";
+
 import useApiRoute from "@/app/hooks/useApiRoute";
+
 import { BlogDetailApi } from "@/types";
-import React from "react";
 
 async function getData(locale: string, blogId: string) {
   return (await fetch(useApiRoute(`/blogs/${blogId}`, locale), {

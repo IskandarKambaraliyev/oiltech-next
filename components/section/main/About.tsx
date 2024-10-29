@@ -1,10 +1,12 @@
 "use client";
 
-import useApiRoute from "@/app/hooks/useApiRoute";
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import React, { useEffect, useState } from "react";
-import CustomSectionTitle from "../../custom/SectionTitle";
 import { Link } from "@/i18n/routing";
+
+import useApiRoute from "@/app/hooks/useApiRoute";
+
+import CustomSectionTitle from "../../custom/SectionTitle";
 
 type AboutApi = {
   id: number;

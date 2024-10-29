@@ -1,13 +1,15 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useEffect,
   ReactNode,
+  FC,
 } from "react";
+import { useLocale } from "next-intl";
+
 import useApiRoute from "../hooks/useApiRoute";
 
 export type DataApi = {
@@ -41,7 +43,7 @@ type DataProviderProps = {
   children: ReactNode;
 };
 
-export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
+export const DataProvider: FC<DataProviderProps> = ({ children }) => {
   const [data, setData] = useState<DataApi | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

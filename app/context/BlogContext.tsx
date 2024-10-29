@@ -1,13 +1,15 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useEffect,
   ReactNode,
+  FC,
 } from "react";
+import { useLocale } from "next-intl";
+
 import useApiRoute from "../hooks/useApiRoute";
 
 export type BlogApi = {
@@ -36,7 +38,7 @@ type BlogProviderProps = {
   children: ReactNode;
 };
 
-export const BlogProvider: React.FC<BlogProviderProps> = ({ children }) => {
+export const BlogProvider: FC<BlogProviderProps> = ({ children }) => {
   const [data, setData] = useState<BlogApi[] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

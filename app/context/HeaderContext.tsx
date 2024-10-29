@@ -1,11 +1,12 @@
 "use client";
 
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useEffect,
   ReactNode,
+  FC,
 } from "react";
 import { usePathname } from "@/i18n/routing";
 
@@ -24,7 +25,7 @@ type HeaderProviderProps = {
   children: ReactNode;
 };
 
-export const HeaderProvider: React.FC<HeaderProviderProps> = ({ children }) => {
+export const HeaderProvider: FC<HeaderProviderProps> = ({ children }) => {
   const pathname = usePathname();
 
   const [sticky, setSticky] = useState<boolean>(false);

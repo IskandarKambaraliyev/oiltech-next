@@ -1,14 +1,16 @@
 "use client";
 
+import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+
 import { useServices } from "@/app/context/ServicesContext";
+
 import {
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/dropdown";
-import { useLocale, useTranslations } from "next-intl";
-import React, { useState } from "react";
 
 const HeaderPopover = () => {
   const t = useTranslations("Header");

@@ -121,6 +121,12 @@ body {
   }
 }
 
+@media (hover: none) {
+  .mouse-follower {
+    display: none;
+  }
+}
+
 @layer utilities {
   .flex-center {
     display: flex;

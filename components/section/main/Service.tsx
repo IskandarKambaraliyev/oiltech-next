@@ -101,7 +101,7 @@ const MouseFollower = ({ top, height }: { top: number; height: number }) => {
             left: position.x,
             transform: "translate(-50%, -50%)",
           }}
-          className="absolute size-[10rem] rounded-full bg-white-main text-blue-main pointer-events-none will-change-auto z-header-1 flex-center text-sm font-semibold"
+          className="absolute size-[10rem] rounded-full bg-white-main text-blue-main pointer-events-none will-change-auto z-header-1 flex-center text-sm font-semibold mouse-follower max-md:hidden"
         >
           {t("find_out_more")}
         </motion.div>

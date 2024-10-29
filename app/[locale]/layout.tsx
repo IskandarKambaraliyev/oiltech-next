@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import Providers from "./providers";
 import useFetchData from "../hooks/useFetchData";
 import { DataApi, ServicesApi } from "@/types";
+import ApplicationStatus from "@/components/ApplicationStatus";
 
 export default async function LocaleLayout({
   children,
@@ -39,6 +40,7 @@ export default async function LocaleLayout({
       <Providers>
         <Header services={services} data={dataApi} />
         <HeaderCatalogModal />
+        <ApplicationStatus />
 
         <main>{children}</main>
 

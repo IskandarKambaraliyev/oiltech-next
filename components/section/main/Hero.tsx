@@ -1,9 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
-
-import useApiRoute from "@/app/hooks/useApiRoute";
+import { useTranslations } from "next-intl";
 
 import CustomTitle from "../../custom/Title";
 import { CustomButton } from "../../custom/buttons";
@@ -18,6 +15,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { SlidesApi } from "@/types";
+import Image from "next/image";
 
 type Props = {
   data: SlidesApi;
@@ -40,10 +38,14 @@ const HomeHero = ({ data }: Props) => {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id} className="w-full h-fit relative">
-            <img
+            <Image
               src={item.image}
-              alt={`Slide image for - ${item.title}`}
-              className="absolute size-full object-cover"
+              alt={`Slide image of ${item.title}`}
+              width={1920}
+              height={1080}
+              fill={false}
+              style={{ objectFit: "cover" }}
+              className="absolute size-full"
             />
             <div
               className="absolute inset-0"

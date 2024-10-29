@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -14,17 +14,16 @@ import { XIcon } from "../Icons";
 const HeaderCatalogModal = () => {
   const t = useTranslations();
   const { catalog, setCatalog } = useHeaderStates();
+  const [last, setLast] = useState("auto");
   const target = useRef(null);
 
   useEffect(() => {
     if (catalog) {
+      setLast(document.body.style.overflow);
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = last;
     }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
   }, [catalog]);
 
   useClickOutside(target, () => {

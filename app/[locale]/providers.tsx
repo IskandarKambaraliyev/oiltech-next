@@ -1,8 +1,12 @@
 import { ReactNode } from "react";
-import { HeaderProvider } from "../context";
+import { HeaderProvider, ApplicationStatusProvider } from "../context";
 
 const Providers = ({ children }: { children: ReactNode }) => {
-  return <HeaderProvider>{children}</HeaderProvider>;
+  return (
+    <HeaderProvider>
+      <ApplicationStatusProvider>{children}</ApplicationStatusProvider>
+    </HeaderProvider>
+  );
 };
 
 export default Providers;

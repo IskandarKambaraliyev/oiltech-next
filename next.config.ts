@@ -6,7 +6,16 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["cp.oiltech.uz"],
+    remotePatterns: [
+      {
+        hostname: "cp.oiltech.uz",
+        protocol: "https",
+      },
+      {
+        hostname: "cp.oiltech.uz",
+        protocol: "http",
+      },
+    ],
   },
   async headers() {
     return [

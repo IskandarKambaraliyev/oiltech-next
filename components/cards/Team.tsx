@@ -1,23 +1,22 @@
+import Image from "next/image";
+
 import { LinkedinCircleIcon, TelegramCircleIcon } from "../Icons";
 
+import { TeamChild } from "@/types";
+
 type Props = {
-  item: {
-    id: number;
-    title: string;
-    image: string;
-    description: string;
-    linkedin: string | null;
-    telegram: string | null;
-  };
+  item: TeamChild;
 };
 
 const CardTeam = ({ item }: Props) => {
   return (
     <div className="h-full flex flex-col">
       <div className="w-full aspect-[1/1]">
-        <img
+        <Image
           src={item.image}
-          alt={`Team member Image of - ${item.title}`}
+          alt={`Card image of ${item.title}`}
+          width={200}
+          height={200}
           className="size-full object-cover object-top grayscale-[1]"
         />
       </div>

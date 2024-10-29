@@ -27,7 +27,7 @@ const InterceptedModal = ({ children }: Props) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 w-full h-screen z-modal bg-black/40 overflow-y-auto py-20"
+      className="fixed inset-0 w-full h-screen z-modal bg-blue-500 backdrop-blur overflow-y-auto py-20"
     >
       <button
         onClick={() => router.back()}
@@ -35,7 +35,7 @@ const InterceptedModal = ({ children }: Props) => {
       >
         <XIcon className="size-1/2" />
       </button>
-      {children}
+      <div className="min-h-[calc(100vh-10rem)] flex-center">{children}</div>
     </motion.div>
   );
 };

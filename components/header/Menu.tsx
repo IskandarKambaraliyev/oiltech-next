@@ -7,24 +7,24 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname as localePathname } from "@/i18n/routing";
 import { Link } from "@/i18n/routing";
 
-import { useData } from "@/app/context/DataContext";
 import { useHeaderStates } from "@/app/context/HeaderContext";
 
 import { CustomButton, CustomCircleButton } from "../custom/buttons";
 import { MailICon, MenuIcon, PhoneICon, XIcon } from "../Icons";
 import HeaderLogo from "./Logo";
+import { DataApi, ServicesApi } from "@/types";
 
 type Props = {
   className?: string;
+  services: ServicesApi;
+  data: DataApi;
 };
 
-const HeaderMenu = ({ className }: Props) => {
+const HeaderMenu = ({ className, services, data }: Props) => {
   const { sticky, special, setCatalog } = useHeaderStates();
 
   const t = useTranslations();
   const pathname = usePathname();
-
-  const { data } = useData();
 
   const [isOpen, setIsOpen] = useState(false);
 

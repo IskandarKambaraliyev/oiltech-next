@@ -3,7 +3,6 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
-import useApiRoute from "@/app/hooks/useApiRoute";
 import { cn } from "@/lib/utils";
 
 import {
@@ -15,31 +14,14 @@ import {
 } from "framer-motion";
 
 import CustomSectionTitle from "../../custom/SectionTitle";
+import { AdvantegesApi } from "@/types";
 
-type AdvantegesApi = {
-  id: number;
-  number: number;
-  postfix: string;
-  description: string;
-}[];
-
-const HomeAdvantages = () => {
+type Props = {
+  data: AdvantegesApi;
+};
+const HomeAdvantages = ({ data }: Props) => {
   const locale = useLocale();
   const t = useTranslations("Home");
-
-  const [data, setData] = useState<AdvantegesApi>([]);
-  useEffect(() => {
-    async function fetchData() {
-      const res = (await fetch(useApiRoute("/statistic", locale), {
-        cache: "default",
-        next: {
-          revalidate: 60,
-        },
-      }).then((res) => res.json())) as AdvantegesApi;
-      setData(res);
-    }
-    fetchData();
-  }, []);
   if (data !== null && data.length > 0) {
     return (
       <section className="py-20">

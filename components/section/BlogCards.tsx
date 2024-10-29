@@ -1,20 +1,15 @@
-"use client";
-
-import { useBlogs } from "@/app/context/BlogContext";
-
 import CardBlog from "../cards/Blog";
+import { BlogResults } from "@/types";
 
 type Props = {
-  limit?: number | null;
+  data: BlogResults;
 };
 
-const BlogCards = ({ limit = null }: Props) => {
-  const { data } = useBlogs();
-
-  if (data) {
+const BlogCards = ({ data }: Props) => {
+  if (data !== null) {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {data.slice(0, limit ? limit : data.length).map((item) => (
+        {data.map((item) => (
           <CardBlog key={item.id} item={item} />
         ))}
       </div>

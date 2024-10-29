@@ -1,47 +1,31 @@
-"use client";
+// "use client";
 
-import { useEffect, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
-import useApiRoute from "@/app/hooks/useApiRoute";
-
 import CustomSectionTitle from "../../custom/SectionTitle";
+import { AboutApi } from "@/types";
+import Image from "next/image";
 
-type AboutApi = {
-  id: number;
-  description: string;
-  youtube_video: string;
-  picture: string;
+type Props = {
+  data: AboutApi;
 };
 
-const HomeAbout = () => {
-  const locale = useLocale();
+const HomeAbout = ({ data }: Props) => {
   const t = useTranslations("Home");
-
-  const [data, setData] = useState<AboutApi | null>(null);
-  useEffect(() => {
-    async function fetchData() {
-      const res = (await fetch(useApiRoute("/about_company", locale), {
-        cache: "default",
-        next: {
-          revalidate: 60,
-        },
-      }).then((res) => res.json())) as AboutApi;
-      setData(res);
-    }
-    fetchData();
-  }, []);
 
   if (data !== null) {
     return (
       <section className="relative">
-        <img
+        <Image
           src={data.picture}
-          alt="Image"
+          alt="About section image"
+          fill
           className="absolute inset-0 size-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#01426A4D]"></div>
+
+        <div className="absolute inset-0 bg-[#01426A4D]" />
+
         <div className="container relative h-screen min-h-fit py-4 flex flex-col justify-end">
           <div className="sticky bottom-4 left-0 flex flex-col gap-4">
             <Link href="/about" className="group w-fit">

@@ -3,16 +3,18 @@
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
-import { useServices } from "@/app/context/ServicesContext";
-
 import {
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/dropdown";
+import { ServicesApi } from "@/types";
 
-const HeaderPopover = () => {
+type Props = {
+  services: ServicesApi;
+};
+const HeaderPopover = ({ services }: Props) => {
   const t = useTranslations("Header");
   const locale = useLocale();
 
@@ -21,7 +23,6 @@ const HeaderPopover = () => {
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
 
-  const { data } = useServices();
   return (
     <div onMouseLeave={handleMouseLeave}>
       <Dropdown
@@ -41,7 +42,7 @@ const HeaderPopover = () => {
         </DropdownTrigger>
 
         <DropdownMenu
-          items={data ? data : []}
+          items={services ? services : []}
           className="p-0"
           itemClasses={{
             base: "p-2 rounded-none text-blue-main data-[hover=true]:bg-blue-100 data-[hover=true]:text-blue-main data-[focus-visible=true]:bg-blue-100 data-[focus-visible=true]:text-blue-main",

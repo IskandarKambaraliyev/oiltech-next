@@ -4,9 +4,10 @@ import { FC } from "react";
 
 interface Props {
   data: string;
+  className?: string;
 }
 
-const HtmlWithModifiedImages: FC<Props> = ({ data }) => {
+const HtmlWithModifiedImages: FC<Props> = ({ data, className = "" }) => {
   const addDomainToImageSrc = (html: string) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
@@ -26,7 +27,12 @@ const HtmlWithModifiedImages: FC<Props> = ({ data }) => {
 
   const modifiedHtml = addDomainToImageSrc(data);
 
-  return <div dangerouslySetInnerHTML={{ __html: modifiedHtml }} />;
+  return (
+    <div
+      dangerouslySetInnerHTML={{ __html: modifiedHtml }}
+      className={className}
+    />
+  );
 };
 
 export default HtmlWithModifiedImages;

@@ -5,8 +5,12 @@ import BlogCards from "../BlogCards";
 import CustomSectionTitle from "../../custom/SectionTitle";
 import CustomTitle from "../../custom/Title";
 import { CustomButton } from "../../custom/buttons";
+import { BlogResults } from "@/types";
 
-const HomeBlog = () => {
+type Props = {
+  data: BlogResults;
+};
+const HomeBlog = ({ data }: Props) => {
   const t = useTranslations();
   return (
     <section className="my-20">
@@ -22,7 +26,7 @@ const HomeBlog = () => {
           </div>
         </div>
 
-        <BlogCards limit={3} />
+        <BlogCards data={data} />
 
         <div className="w-full sm:hidden">
           <CustomButton color="white" variant="outlined" href="/blogs">

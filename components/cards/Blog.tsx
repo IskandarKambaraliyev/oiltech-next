@@ -1,12 +1,13 @@
 import { Link } from "@/i18n/routing";
 
-import { BlogApi } from "@/app/context/BlogContext";
 import useDateFormatter from "@/app/hooks/useDateFormatter";
 
 import { CalendarIcon } from "../Icons";
+import Image from "next/image";
+import { BlogResultsChild } from "@/types";
 
 type Props = {
-  item: BlogApi;
+  item: BlogResultsChild;
 };
 
 const CardBlog = ({ item }: Props) => {
@@ -16,7 +17,13 @@ const CardBlog = ({ item }: Props) => {
       className="flex flex-col gap-2 bg-white-100 hover:bg-white-200 text-white p-4 transition"
     >
       <div className="w-full aspect-[2/1]">
-        <img src={item.image} className="size-full object-cover" />
+        <Image
+          src={item.image}
+          alt={`Blog card image of ${item.title}`}
+          width={640}
+          height={320}
+          className="size-full object-cover"
+        />
       </div>
 
       <div className="flex flex-col gap-8">

@@ -1,8 +1,6 @@
-"use client";
+// "use client";
 
 import { useTranslations } from "next-intl";
-
-import { useData } from "@/app/context/DataContext";
 
 // Importing Components
 import CustomSectionTitle from "./custom/SectionTitle";
@@ -22,56 +20,63 @@ import {
   TimerIcon,
   WhatsappOutlinedIcon,
 } from "./Icons";
+import { DataApi } from "@/types";
 
-const Footer = () => {
+type Props = {
+  data: DataApi;
+};
+
+const Footer = ({ data }: Props) => {
   const t = useTranslations();
-  const { data } = useData();
-  if (data === null && data === undefined) return null;
-  return (
-    <footer id="contacts" className="pt-12 pb-6 bg-blue-main text-white">
-      <div className="container">
-        <div className="">
-          <CustomSectionTitle>{t("Footer.title")}</CustomSectionTitle>
-          <CustomTitle>{t("Footer.contacts")}</CustomTitle>
-        </div>
-
-        <FooterLinks />
-
-        <div className="w-full h-[1px] bg-white-300 my-10"></div>
-
-        <div className="flex max-[1024px]:flex-col-reverse gap-x-4 gap-y-8 items-start">
-          <div className="max-[1024px]:w-full w-[20rem]">
-            <h6 className="mb-2 font-semibold text-lg lg:text-xl">
-              {t("Form.title")}
-            </h6>
-            <ApplicationForm />
+  if (data !== null) {
+    return (
+      <footer id="contacts" className="pt-12 pb-6 bg-blue-main text-white">
+        <div className="container">
+          <div className="">
+            <CustomSectionTitle>{t("Footer.title")}</CustomSectionTitle>
+            <CustomTitle>{t("Footer.contacts")}</CustomTitle>
           </div>
 
-          <div className="flex-1 max-[1024px]:w-full">
-            <iframe
-              src="https://yandex.com/map-widget/v1/?ll=69.282440%2C41.296180&mode=search&oid=110181046271&ol=biz&z=17"
-              width="560"
-              height="365"
-              allowFullScreen={true}
-              className="w-full max-[450px]:h-[250px] min-[450px]: h-[400px]"
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin allow-popups"
-              title="Yandex Map"
-            ></iframe>
-          </div>
-        </div>
+          <FooterLinks data={data} />
 
-        <p className="text-center text-white-500 mt-16">{t("Footer.text")}</p>
-      </div>
-    </footer>
-  );
+          <div className="w-full h-[1px] bg-white-300 my-10"></div>
+
+          <div className="flex max-[1024px]:flex-col-reverse gap-x-4 gap-y-8 items-start">
+            <div className="max-[1024px]:w-full w-[20rem]">
+              <h6 className="mb-2 font-semibold text-lg lg:text-xl">
+                {t("Form.title")}
+              </h6>
+              <ApplicationForm />
+            </div>
+
+            <div className="flex-1 max-[1024px]:w-full">
+              <iframe
+                src="https://yandex.com/map-widget/v1/?ll=69.282440%2C41.296180&mode=search&oid=110181046271&ol=biz&z=17"
+                width="560"
+                height="365"
+                allowFullScreen={true}
+                className="w-full max-[450px]:h-[250px] min-[450px]: h-[400px]"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-popups"
+                title="Yandex Map"
+              ></iframe>
+            </div>
+          </div>
+
+          <p className="text-center text-white-500 mt-16">{t("Footer.text")}</p>
+        </div>
+      </footer>
+    );
+  }
 };
 
 export default Footer;
 
-function FooterLinks() {
+type FooterLinksProps = {
+  data: DataApi;
+};
+function FooterLinks({ data }: FooterLinksProps) {
   const t = useTranslations("Footer");
-  const { data } = useData();
 
   if (data !== null) {
     return (

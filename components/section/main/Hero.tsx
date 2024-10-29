@@ -17,34 +17,15 @@ import { Pagination, Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { SlidesApi } from "@/types";
 
-type SlidesApi = {
-  id: number;
-  title: string;
-  image: string;
-  description: string | null;
-  button_text: string | null;
-  button_link: string | null;
-  youtube_link: string | null;
-}[];
+type Props = {
+  data: SlidesApi;
+};
 
-const HomeHero = () => {
-  const locale = useLocale();
+const HomeHero = ({ data }: Props) => {
   const t = useTranslations("Home");
 
-  const [data, setData] = useState<SlidesApi>([]);
-  useEffect(() => {
-    async function fetchData() {
-      const res = (await fetch(useApiRoute("/slides", locale), {
-        cache: "default",
-        next: {
-          revalidate: 60,
-        },
-      }).then((res) => res.json())) as SlidesApi;
-      setData(res);
-    }
-    fetchData();
-  }, []);
   if (data !== null && data.length > 0) {
     return (
       <Swiper

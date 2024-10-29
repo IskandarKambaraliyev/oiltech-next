@@ -10,8 +10,14 @@ import LangSwitcher from "./LangSwitcher";
 import HeaderSearch, { HeaderSearchMobile } from "./Search";
 import HeaderMenu from "./Menu";
 import HeaderPopover from "./Popover";
+import { DataApi, ServicesApi } from "@/types";
 
-const Header = () => {
+type Props = {
+  services: ServicesApi;
+  data: DataApi;
+};
+
+const Header = ({ services, data }: Props) => {
   const t = useTranslations("Header");
   const { sticky, special } = useHeaderStates();
   return (
@@ -42,17 +48,17 @@ const Header = () => {
 
         <div className="max-xl:hidden flex items-center gap-4">
           <HeaderLink href="/">{t("home")}</HeaderLink>
-          <HeaderPopover />
+          <HeaderPopover services={services} />
           <HeaderLink href="/blogs">{t("blog")}</HeaderLink>
           <HeaderLink href="/about">{t("about")}</HeaderLink>
           <HeaderLink href="#contacts">{t("contacts")}</HeaderLink>
         </div>
-        <HeaderMenu className="max-xl:hidden" />
+        <HeaderMenu services={services} data={data} className="max-xl:hidden" />
 
         <div className="xl:hidden flex items-center gap-4">
           <HeaderSearchMobile />
 
-          <HeaderMenu />
+          <HeaderMenu services={services} data={data} />
         </div>
       </div>
     </header>

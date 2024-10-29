@@ -631,3 +631,23 @@ export const InstagramOutlinedIcon = ({
     </svg>
   );
 };
+
+export const PlayCircleIcon = ({ className = "" }: { className?: string }) => {
+  return (
+    <svg
+      width="121"
+      height="120"
+      viewBox="0 0 121 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M60.5 120C93.6371 120 120.5 93.1371 120.5 60C120.5 26.8629 93.6371 0 60.5 0C27.3629 0 0.5 26.8629 0.5 60C0.5 93.1371 27.3629 120 60.5 120ZM51.5 75.5885L78.5 60L51.5 44.4115V75.5885Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};

@@ -47,5 +47,8 @@
     "submit": "Yuborish",
     "success": "Sizning ma’lumotingiz muvaffaqiyatli yuborildi",
     "failed": "Nimadir noto‘g‘ri ketdi. Qaytadan urinib ko‘ring"
+  },
+  "About": {
+    "watch_video": "Kompaniya haqidagi video ko‘rish"
   }
 }

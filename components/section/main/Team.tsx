@@ -1,12 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import CustomSectionTitle from "../../custom/SectionTitle";
 import CustomTitle from "../../custom/Title";
-
-import useApiRoute from "@/app/hooks/useApiRoute";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,32 +14,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import CardTeam from "../../cards/Team";
 
-type TeamApi = {
-  id: number;
-  title: string;
-  image: string;
-  description: string;
-  linkedin: string | null;
-  telegram: string | null;
-}[];
+import { TeamApi } from "@/types";
 
-const HomeTeam = () => {
-  const locale = useLocale();
+type Props = {
+  data: TeamApi;
+};
+const HomeTeam = ({ data }: Props) => {
   const t = useTranslations();
 
-  const [data, setData] = useState<TeamApi>([]);
-  useEffect(() => {
-    async function fetchData() {
-      const res = (await fetch(useApiRoute("/team", locale), {
-        cache: "default",
-        next: {
-          revalidate: 60,
-        },
-      }).then((res) => res.json())) as TeamApi;
-      setData(res);
-    }
-    fetchData();
-  }, []);
   if (data !== null && data.length > 0) {
     return (
       <section className="py-20">

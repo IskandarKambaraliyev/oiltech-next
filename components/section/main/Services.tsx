@@ -5,15 +5,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
-import { useServices, type ServicesApi } from "@/app/context/ServicesContext";
-
 import CustomSectionTitle from "../../custom/SectionTitle";
 import CustomTitle from "../../custom/Title";
+import { ServicesApi, ServicesChild } from "@/types";
 
-const HomeServices = () => {
+type Props = {
+  data: ServicesApi;
+};
+
+const HomeServices = ({ data }: Props) => {
   const t = useTranslations("Home");
-
-  const { data } = useServices();
 
   if (data !== null && data.length !== 0) {
     return (
@@ -34,7 +35,7 @@ const HomeServices = () => {
 export default HomeServices;
 
 type ServiceProps = {
-  item: ServicesApi;
+  item: ServicesChild;
 };
 
 function Service({ item }: ServiceProps) {

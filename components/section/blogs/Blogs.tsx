@@ -1,12 +1,16 @@
 "use client";
 
+import { BlogResults } from "@/types";
 import BlogCards from "../BlogCards";
 
-const BlogsList = () => {
+type Props = {
+  data: BlogResults;
+};
+const BlogsList = ({ data }: Props) => {
   return (
     <section className="-mt-12 mb-20 relative">
       <div className="container">
-        <BlogCards />
+        <BlogCards data={data} />
       </div>
     </section>
   );

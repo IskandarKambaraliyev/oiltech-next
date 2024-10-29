@@ -5,14 +5,12 @@ import { notFound } from "next/navigation";
 
 import { AnimatePresence } from "framer-motion";
 
-import { DataProvider } from "../context/DataContext";
-import { ServicesProvider } from "../context/ServicesContext";
-import { BlogProvider } from "../context/BlogContext";
-import { HeaderProvider } from "../context/HeaderContext";
-
 import Header from "@/components/header/Header";
 import HeaderCatalogModal from "@/components/header/CatalogModal";
 import Footer from "@/components/Footer";
+import Providers from "./providers";
+import useFetchData from "../hooks/useFetchData";
+import { DataApi, ServicesApi } from "@/types";
 
 export default async function LocaleLayout({
   children,
@@ -33,24 +31,21 @@ export default async function LocaleLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
 
+  const services = await useFetchData<ServicesApi>("/services", locale);
+  const dataApi = await useFetchData<DataApi>("/data", locale);
+
   return (
     <NextIntlClientProvider messages={messages}>
-      <HeaderProvider>
-        <DataProvider>
-          <ServicesProvider>
-            <BlogProvider>
-              <Header />
-              <HeaderCatalogModal />
+      <Providers>
+        <Header services={services} data={dataApi} />
+        <HeaderCatalogModal />
 
-              <main>{children}</main>
+        <main>{children}</main>
 
-              <Footer />
+        <Footer data={dataApi} />
 
-              {modal && <AnimatePresence>{modal}</AnimatePresence>}
-            </BlogProvider>
-          </ServicesProvider>
-        </DataProvider>
-      </HeaderProvider>
+        {modal && <AnimatePresence>{modal}</AnimatePresence>}
+      </Providers>
     </NextIntlClientProvider>
   );
 }

@@ -12,10 +12,15 @@ export async function submitApplicationForm(
   const company = formData.get("company") as string | null;
   const message = formData.get("message") as string | null;
 
-  const body = JSON.stringify({ name, contact, company, message });
+  const body = JSON.stringify({
+    name: name.trim(),
+    contact: contact.trim(),
+    company: company ? company.trim() : null,
+    message: message ? message.trim() : null,
+  });
 
   try {
-    const response = await fetch(useApiRoute(`/application`, locale), {
+    const response = await fetch(useApiRoute(`/application/`, locale), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,13 +35,13 @@ export async function submitApplicationForm(
     return {
       status: "success",
       message: "Application submitted",
-      response,
+      url: response.url,
     } as SubmitApplicationFormResponse;
   } catch (error) {
+    console.error(error);
     return {
       status: "error",
       message: "Application failed",
-      error,
     } as SubmitApplicationFormResponse;
   }
 }

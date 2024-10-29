@@ -44,6 +44,8 @@
     "contact": "Telefon raqam yoki email",
     "message": "Xabaringiz",
     "company": "Kompaniyangiz nomi",
-    "submit": "Yuborish"
+    "submit": "Yuborish",
+    "success": "Sizning ma’lumotingiz muvaffaqiyatli yuborildi",
+    "failed": "Nimadir noto‘g‘ri ketdi. Qaytadan urinib ko‘ring"
   }
 }

@@ -20,15 +20,15 @@ import {
 import ApplicationForm from "../ApplicationForm";
 
 const Footer = () => {
-  const t = useTranslations("Footer");
+  const t = useTranslations();
   const { data } = useData();
   if (data === null && data === undefined) return null;
   return (
     <footer id="contacts" className="pt-12 pb-6 bg-blue-main text-white">
       <div className="container">
         <div className="">
-          <CustomSectionTitle>{t("title")}</CustomSectionTitle>
-          <CustomTitle>{t("contacts")}</CustomTitle>
+          <CustomSectionTitle>{t("Footer.title")}</CustomSectionTitle>
+          <CustomTitle>{t("Footer.contacts")}</CustomTitle>
         </div>
 
         <FooterLinks />
@@ -37,6 +37,9 @@ const Footer = () => {
 
         <div className="flex max-[1024px]:flex-col-reverse gap-x-4 gap-y-8 items-start">
           <div className="max-[1024px]:w-full w-[20rem]">
+            <h6 className="mb-2 font-semibold text-lg lg:text-xl">
+              {t("Form.title")}
+            </h6>
             <ApplicationForm />
           </div>
 
@@ -45,14 +48,16 @@ const Footer = () => {
               src="https://yandex.com/map-widget/v1/?ll=69.282440%2C41.296180&mode=search&oid=110181046271&ol=biz&z=17"
               width="560"
               height="365"
-              frameBorder="1"
               allowFullScreen={true}
               className="w-full max-[450px]:h-[250px] min-[450px]: h-[400px]"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-popups"
+              title="Yandex Map"
             ></iframe>
           </div>
         </div>
 
-        <p className="text-center text-white-500 mt-16">{t("text")}</p>
+        <p className="text-center text-white-500 mt-16">{t("Footer.text")}</p>
       </div>
     </footer>
   );

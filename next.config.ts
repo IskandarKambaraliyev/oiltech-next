@@ -8,6 +8,19 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["cp.oiltech.uz"],
   },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: "frame-src 'self' https://yandex.com;",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

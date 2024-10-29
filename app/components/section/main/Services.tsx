@@ -83,7 +83,7 @@ function Service({ item }: ServiceProps) {
 
       <div className="container relative h-screen min-h-fit flex items-end pt-4 pb-8">
         <div className="sticky bottom-8 left-0">
-          <h4 className="font-semibold text-2xl md:text-[2rem] lg:text-[3rem] max-w-[40rem] line-clamp-4">
+          <h4 className="font-semibold text-2xl md:text-[2rem] lg:text-[3rem] max-w-[40rem] line-clamp-4 leading-tight">
             {item.title}
           </h4>
         </div>

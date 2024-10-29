@@ -20,6 +20,5 @@ export type BlogDetailApi = {
 export type SubmitApplicationFormResponse = {
   status: "success" | "error";
   message: string;
-  response?: Response;
-  error?: Error;
+  url?: string;
 };

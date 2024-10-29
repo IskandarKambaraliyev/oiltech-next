@@ -46,7 +46,7 @@ export const ServicesProvider: FC<ServicesProviderProps> = ({ children }) => {
 
     try {
       const response = await fetch(useApiRoute("/services", locale), {
-        cache: "force-cache",
+        cache: "default",
         next: {
           revalidate: 600,
         },

@@ -55,9 +55,9 @@ export const DataProvider: FC<DataProviderProps> = ({ children }) => {
 
     try {
       const response = await fetch(useApiRoute("/data", locale), {
-        cache: "force-cache",
+        cache: "default",
         next: {
-          revalidate: 3600,
+          revalidate: 600,
         },
       });
       if (!response.ok) throw new Error("Failed to fetch data");

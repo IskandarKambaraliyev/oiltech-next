@@ -1,9 +1,13 @@
-import React from 'react'
+import BlogsList from "@/components/section/blogs/Blogs";
+import BlogsHero from "@/components/section/blogs/Hero";
 
 const BlogsPage = () => {
   return (
-    <div>BlogsPage</div>
-  )
-}
+    <>
+      <BlogsHero />
+      <BlogsList />
+    </>
+  );
+};
 
-export default BlogsPage
+export default BlogsPage;

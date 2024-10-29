@@ -14,6 +14,8 @@ type HeaderContextType = {
   setSticky: (sticky: boolean) => void;
   special: boolean;
   setSpecial: (special: boolean) => void;
+  catalog: boolean;
+  setCatalog: (catalog: boolean) => void;
 };
 
 const HeaderContext = createContext<HeaderContextType | undefined>(undefined);
@@ -27,6 +29,7 @@ export const HeaderProvider: React.FC<HeaderProviderProps> = ({ children }) => {
 
   const [sticky, setSticky] = useState<boolean>(false);
   const [special, setSpecial] = useState<boolean>(false);
+  const [catalog, setCatalog] = useState<boolean>(false);
 
   function handleScroll() {
     if (window.scrollY > 0) {
@@ -47,7 +50,9 @@ export const HeaderProvider: React.FC<HeaderProviderProps> = ({ children }) => {
   }, [pathname]);
 
   return (
-    <HeaderContext.Provider value={{ sticky, setSticky, special, setSpecial }}>
+    <HeaderContext.Provider
+      value={{ sticky, setSticky, special, setSpecial, catalog, setCatalog }}
+    >
       {children}
     </HeaderContext.Provider>
   );

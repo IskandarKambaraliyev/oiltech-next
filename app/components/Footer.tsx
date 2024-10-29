@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import CustomSectionTitle from "../custom/SectionTitle";
+import CustomSectionTitle from "./custom/SectionTitle";
 import { useTranslations } from "next-intl";
-import CustomTitle from "../custom/Title";
+import CustomTitle from "./custom/Title";
 import { useData } from "@/app/context/DataContext";
 import {
   FacebookOutlinedIcon,
@@ -16,8 +16,8 @@ import {
   TelegramOutlinedIcon,
   TimerIcon,
   WhatsappOutlinedIcon,
-} from "../Icons";
-import ApplicationForm from "../ApplicationForm";
+} from "./Icons";
+import ApplicationForm from "./ApplicationForm";
 
 const Footer = () => {
   const t = useTranslations();

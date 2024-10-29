@@ -8,7 +8,8 @@ import { ServicesProvider } from "../context/ServicesContext";
 import { BlogProvider } from "../context/BlogContext";
 import { AnimatePresence } from "framer-motion";
 import { HeaderProvider } from "../context/HeaderContext";
-import Footer from "../components/footer/Footer";
+import Footer from "../components/Footer";
+import HeaderCatalogModal from "../components/header/CatalogModal";
 
 export default async function LocaleLayout({
   children,
@@ -36,6 +37,7 @@ export default async function LocaleLayout({
           <ServicesProvider>
             <BlogProvider>
               <Header />
+              <HeaderCatalogModal />
 
               <main>{children}</main>
 

@@ -16,12 +16,14 @@ type Props = {
   type?: "contact" | "catalog";
   inputColor?: InputColor;
   btnColor?: "green" | "white";
+  onSubmitted?: (url: string) => void;
 };
 
 const ApplicationForm = ({
   type = "contact",
   inputColor = "white",
   btnColor = "green",
+  onSubmitted,
 }: Props) => {
   const locale = useLocale();
   const t = useTranslations("Form");
@@ -54,8 +56,9 @@ const ApplicationForm = ({
     const result = await submitApplicationForm(formData, locale);
     setResponse(result);
     setIsOpen(true);
-
-    console.log(result);
+    if (result.status === "success" && result.url && onSubmitted) {
+      await onSubmitted(result.url);
+    }
   }
   return (
     <>

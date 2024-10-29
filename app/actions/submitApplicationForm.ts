@@ -32,10 +32,11 @@ export async function submitApplicationForm(
       throw new Error("Failed to submit application form");
     }
 
+    const result = await response.text();
     return {
       status: "success",
       message: "Application submitted",
-      url: response.url,
+      url: result,
     } as SubmitApplicationFormResponse;
   } catch (error) {
     console.error(error);

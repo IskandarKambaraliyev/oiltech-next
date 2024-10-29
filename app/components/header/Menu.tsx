@@ -11,13 +11,15 @@ import HeaderLogo from "./Logo";
 import { usePathname, useRouter } from "next/navigation";
 import { usePathname as localePathname } from "@/i18n/routing";
 import { useHeaderStates } from "@/app/context/HeaderContext";
+import CustomTitle from "../custom/Title";
+import ApplicationForm from "../ApplicationForm";
 
 type Props = {
   className?: string;
 };
 
 const HeaderMenu = ({ className }: Props) => {
-  const { sticky, special } = useHeaderStates();
+  const { sticky, special, setCatalog } = useHeaderStates();
 
   const t = useTranslations();
   const pathname = usePathname();
@@ -59,6 +61,7 @@ const HeaderMenu = ({ className }: Props) => {
             </CustomLink>
 
             <CustomButton
+              onClick={() => setCatalog(true)}
               color={special && !sticky ? "blue" : "white"}
               variant="outlined"
             >
@@ -113,7 +116,11 @@ const HeaderMenu = ({ className }: Props) => {
                     {t("Header.contacts")}
                   </CustomMenuLink>
 
-                  <CustomButton color="white" variant="outlined">
+                  <CustomButton
+                    color="white"
+                    variant="outlined"
+                    onClick={() => setCatalog(true)}
+                  >
                     {t("get_catalog")}
                   </CustomButton>
                 </div>

@@ -13,7 +13,7 @@ type Props = {
 const HomeBlog = ({ data }: Props) => {
   const t = useTranslations();
   return (
-    <section className="my-20">
+    <section className="mb-20">
       <div className="container space-y-8">
         <div>
           <CustomSectionTitle>{t("blog")}</CustomSectionTitle>

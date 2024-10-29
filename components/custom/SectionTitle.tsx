@@ -19,7 +19,7 @@ const CustomSectionTitle = ({ className, children }: Props) => {
     >
       <span>{children}</span>
 
-      <ReturnIcon />
+      <ReturnIcon className="size-6 md:size-8" />
     </h3>
   );
 };

@@ -70,7 +70,7 @@ const HeaderCatalogModal = () => {
           transition={{ duration: 0.3 }}
           className="fixed inset-0 z-modal-1 h-screen bg-blue-500 overflow-y-auto py-20"
         >
-          <div className="h-fit min-h-[calc(100vh-10rem)] flex-center">
+          <div className="h-fit min-h-full flex-center">
             <div
               className="bg-green-main max-w-[50rem] w-[calc(100%-2rem)] mx-auto py-8 md:py-16 px-4 md:px-8 flex flex-col items-center gap-4 md:gap-8 relative"
               ref={target}

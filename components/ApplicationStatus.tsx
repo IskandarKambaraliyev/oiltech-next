@@ -47,7 +47,7 @@ const ApplicationStatus = () => {
           }}
           className="fixed inset-0 size-full overflow-y-auto z-modal bg-blue-500 backdrop-blur py-20"
         >
-          <div className="min-h-[calc(100vh-10rem)] h-fit flex-center">
+          <div className="min-h-full h-fit flex-center">
             <div
               className="bg-green-main max-w-[36rem] w-[calc(100%-2rem)] p-8 md:p-16 relative text-white-main flex flex-col items-center gap-8"
               ref={target}

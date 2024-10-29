@@ -15,12 +15,12 @@ const HomeServices = ({ data }: Props) => {
   if (data !== null && data.length !== 0) {
     return (
       <section>
-        <div className="container flex flex-col gap-4">
+        <div className="container">
           <CustomSectionTitle>{t("our_services")}</CustomSectionTitle>
           <CustomTitle>{t("main_services")}</CustomTitle>
         </div>
 
-        <div className="flex flex-col mt-14">
+        <div className="flex flex-col mt-6 lg:mt-14">
           {data && data.map((item) => <Service key={item.id} item={item} />)}
         </div>
       </section>

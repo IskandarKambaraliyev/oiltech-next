@@ -11,7 +11,7 @@ const CustomTitle = ({ className, children }: Props) => {
   return (
     <h2
       className={cn(
-        "text-[2.5rem] md:text-[3rem] xl:text-[3.75rem] font-medium line-clamp-3 leading-tight",
+        "text-[1.5rem] md:text-[3rem] xl:text-[3.75rem] font-medium line-clamp-4 leading-tight",
         className
       )}
     >

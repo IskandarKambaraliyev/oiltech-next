@@ -32,7 +32,7 @@ async function getSearchResults(
       next: {
         revalidate: 3600,
       },
-      cache: "force-cache",
+      cache: "default",
     }).then((res) => res.json());
 
     setResults(data);
@@ -186,41 +186,45 @@ export function HeaderSearchMobile() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 w-screen h-screen bg-blue-500 px-4 py-20 overflow-y-auto"
           >
-            <div
-              className="text-blue-main flex flex-col gap-4 max-w-[25rem] w-full mx-auto my-auto"
-              ref={target}
-            >
-              <div className="flex items-center h-14 bg-white rounded-full pr-4 overflow-hidden">
-                <CustomCircleButton variant="solid">
-                  <SearchIcon />
-                </CustomCircleButton>
+            <div className="min-h-full h-fit flex-center">
+              <div
+                className="text-blue-main flex flex-col gap-4 max-w-[25rem] w-full"
+                ref={target}
+              >
+                <div className="flex items-center h-14 bg-white rounded-full pr-4 overflow-hidden">
+                  <CustomCircleButton variant="solid">
+                    <SearchIcon />
+                  </CustomCircleButton>
 
-                <SearchInput
-                  ref={input}
-                  search={search}
-                  setSearch={setSearch}
-                  loading={loading}
-                />
-              </div>
+                  <SearchInput
+                    ref={input}
+                    search={search}
+                    setSearch={setSearch}
+                    loading={loading}
+                  />
+                </div>
 
-              <AnimatePresence>
-                {results !== null && search !== "" && isOpen && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="w-full h-fit max-h-[50vh] overflow-y-auto bg-white rounded-[1rem] custom-scrollbar"
-                  >
-                    {results.length > 0 ? (
-                      <Results results={results} />
-                    ) : (
-                      <div className="bg-white rounded-[1rem] py-2 px-4 text-blue-main font-medium">
-                        {t("no_results")}
-                      </div>
+                <div className="w-full min-h-[20rem] h-[50vh]">
+                  <AnimatePresence>
+                    {results !== null && search !== "" && isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="max-h-full h-fit bg-white rounded-[1rem] overflow-y-auto custom-scrollbar"
+                      >
+                        {results.length > 0 ? (
+                          <Results results={results} />
+                        ) : (
+                          <div className="bg-white rounded-[1rem] py-2 px-4 text-blue-main font-medium">
+                            {t("no_results")}
+                          </div>
+                        )}
+                      </motion.div>
                     )}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  </AnimatePresence>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}

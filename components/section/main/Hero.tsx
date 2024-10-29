@@ -61,7 +61,7 @@ const HomeHero = ({ data }: Props) => {
                   {item.title}
                 </CustomTitle>
 
-                <p className="text-base lg:text-xl max-w-[45rem] line-clamp-4">
+                <p className="text-sm lg:text-xl max-w-[45rem] line-clamp-4">
                   {item.description}
                 </p>
               </div>

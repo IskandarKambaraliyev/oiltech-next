@@ -2,11 +2,12 @@
 
 // Importing Dependencies
 import { useRouter } from "next/navigation";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 // Importing Icons
 import { XIcon } from "./Icons";
+import useClickOutside from "@/app/hooks/useClickOutside";
 
 type Props = {
   children: ReactNode;
@@ -21,6 +22,12 @@ const InterceptedModal = ({ children }: Props) => {
       document.body.style.overflow = "auto";
     };
   });
+
+  const target = useRef<HTMLDivElement | null>(null);
+
+  useClickOutside(target, () => {
+    router.back();
+  });
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,12 +37,17 @@ const InterceptedModal = ({ children }: Props) => {
       className="fixed inset-0 w-full h-screen z-modal bg-blue-500 backdrop-blur overflow-y-auto py-20"
     >
       <button
-        onClick={() => router.back()}
+        onClick={() => {
+          console.log("close");
+          router.back();
+        }}
         className="absolute top-8 right-[var(--spacing-container)] size-8 rounded-full flex-center bg-white text-blue-main"
       >
         <XIcon className="size-1/2" />
       </button>
-      <div className="min-h-[calc(100vh-10rem)] flex-center">{children}</div>
+      <div className="min-h-full h-fit flex-center" ref={target}>
+        {children}
+      </div>
     </motion.div>
   );
 };

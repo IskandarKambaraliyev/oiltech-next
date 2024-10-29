@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
 interface Props {
   data: string;
@@ -8,24 +8,28 @@ interface Props {
 }
 
 const HtmlWithModifiedImages: FC<Props> = ({ data, className = "" }) => {
-  const addDomainToImageSrc = (html: string) => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, "text/html");
+  const [modifiedHtml, setModifiedHtml] = useState<string>(data);
 
-    // Select all <img> elements
-    const images = doc.querySelectorAll("img");
-    images.forEach((img) => {
-      const src = img.getAttribute("src");
-      if (src && !src.startsWith("http")) {
-        // Only modify non-absolute URLs
-        img.setAttribute("src", `${process.env.NEXT_PUBLIC_BASE_URL}${src}`);
-      }
-    });
+  useEffect(() => {
+    const addDomainToImageSrc = (html: string) => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
 
-    return doc.body.innerHTML; // Return modified HTML
-  };
+      // Select all <img> elements
+      const images = doc.querySelectorAll("img");
+      images.forEach((img) => {
+        const src = img.getAttribute("src");
+        if (src && !src.startsWith("http")) {
+          // Only modify non-absolute URLs
+          img.setAttribute("src", `${process.env.NEXT_PUBLIC_BASE_URL}${src}`);
+        }
+      });
 
-  const modifiedHtml = addDomainToImageSrc(data);
+      return doc.body.innerHTML; // Return modified HTML
+    };
+
+    setModifiedHtml(addDomainToImageSrc(data));
+  }, []);
 
   return (
     <div

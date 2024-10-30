@@ -37,10 +37,6 @@ const InterceptedModal = ({ children }: Props) => {
       className="fixed inset-0 w-full h-screen z-modal bg-blue-500 backdrop-blur overflow-y-auto py-20"
     >
       <button
-        onClick={() => {
-          console.log("close");
-          router.back();
-        }}
         className="absolute top-8 right-[var(--spacing-container)] size-8 rounded-full flex-center bg-white text-blue-main"
       >
         <XIcon className="size-1/2" />

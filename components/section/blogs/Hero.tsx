@@ -23,7 +23,7 @@ const BlogsHero = () => {
             "linear-gradient(180deg, #000 -14.26%, rgba(0, 0, 0, 0.00) 20.69%, rgba(0, 0, 0, 0.05) 27.68%, #01426A 76.61%), linear-gradient(180deg, rgba(1, 65, 106, 0.00) 30.56%, rgba(1, 66, 106, 0.00) 33.01%, #01426A 116.13%)",
         }}
       />
-      <div className="container h-[80vh] min-h-fit py-20 relative flex flex-col justify-end">
+      <div className="container h-[80svh] min-h-fit py-20 relative flex flex-col justify-end">
         <h1 className="text-base md:text-2xl text-green-main font-semibold">
           {t("blog")}
         </h1>

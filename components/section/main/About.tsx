@@ -24,7 +24,7 @@ const HomeAbout = ({ data }: Props) => {
 
         <div className="absolute inset-0 bg-[#01426A4D]" />
 
-        <div className="container relative h-screen min-h-fit py-4 flex flex-col justify-end">
+        <div className="container relative h-svh min-h-fit py-4 flex flex-col justify-end">
           <div className="sticky bottom-4 left-0 flex flex-col gap-4">
             <Link href="/about" className="group w-fit">
               <CustomSectionTitle className="py-2 px-6 bg-white text-blue-main w-fit group-hover:bg-green-main group-hover:text-white-main transition">

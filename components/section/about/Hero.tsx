@@ -24,7 +24,7 @@ const AboutHero = ({ data }: Props) => {
             className="absolute inset-0 size-full object-cover"
           />
 
-          <div className="container h-[80vh] min-h-fit relative py-20 flex-center">
+          <div className="container h-[80svh] min-h-fit relative py-20 flex-center">
             <a
               href={data.youtube_video}
               className="flex flex-col items-center gap-6 md:gap-8 group"

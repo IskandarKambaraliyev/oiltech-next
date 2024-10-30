@@ -55,7 +55,7 @@ const HomeHero = ({ data }: Props) => {
               }}
             />
 
-            <div className="w-full !h-screen min-h-fit relative container flex flex-col gap-6 justify-end py-20">
+            <div className="w-full h-svh min-h-fit relative container flex flex-col gap-6 justify-end py-20">
               <div className="flex flex-col gap-2">
                 <CustomTitle className="max-w-[60rem]">
                   {item.title}

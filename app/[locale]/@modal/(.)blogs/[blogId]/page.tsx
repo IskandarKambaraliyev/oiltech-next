@@ -7,7 +7,6 @@ import { BlogDetailApi } from "@/types";
 
 async function getData(locale: string, blogId: string) {
   return (await fetch(useApiRoute(`/blogs/${blogId}`, locale), {
-    cache: "force-cache",
     next: {
       revalidate: 600,
     },

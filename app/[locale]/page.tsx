@@ -20,9 +20,9 @@ import {
 import useFetchData from "../hooks/useFetchData";
 
 type HomePageProps = {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
 export default async function HomePage({ params }: HomePageProps) {

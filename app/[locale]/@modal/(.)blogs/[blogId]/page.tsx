@@ -17,7 +17,7 @@ async function getData(locale: string, blogId: string) {
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { blogId: string; locale: "ru" | "uz" };
+  params: Promise<{ locale: string; blogId: string }>;
 }) {
   const { locale, blogId } = await params;
   const data = await getData(locale, blogId);

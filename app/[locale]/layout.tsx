@@ -20,11 +20,11 @@ export default async function LocaleLayout({
 }: {
   children: React.ReactNode;
   modal: React.ReactNode;
-  params: { locale: "ru" | "uz" };
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale)) {
+  if (!routing.locales.includes(locale as "ru" | "uz")) {
     notFound();
   }
 

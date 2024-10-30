@@ -4,9 +4,9 @@ import BlogsHero from "@/components/section/blogs/Hero";
 import { BlogResults } from "@/types";
 
 type Props = {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 export default async function BlogsPage({ params }: Props) {
   const { locale } = await params;

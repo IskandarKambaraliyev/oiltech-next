@@ -1,4 +1,4 @@
-import { convert } from "html-to-text";
+// import { convert } from "html-to-text";
 
 import BlogDeatail from "@/components/section/blogs/Detail";
 
@@ -17,14 +17,14 @@ async function getData(locale: string, blogId: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: "ru" | "uz"; blogId: string };
+  params: Promise<{ locale: string; blogId: string }>;
 }) {
   const { locale, blogId } = await params;
 
   const data = await getData(locale, blogId);
   return {
     title: data.title,
-    description: convert(data.description.slice(0, 300)),
+    description: data.description.slice(0, 300),
     image: data.image,
   };
 }
@@ -32,7 +32,7 @@ export async function generateMetadata({
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { blogId: string; locale: "ru" | "uz" };
+  params: Promise<{ blogId: string; locale: string }>;
 }) {
   const { locale, blogId } = await params;
   const data = await getData(locale, blogId);

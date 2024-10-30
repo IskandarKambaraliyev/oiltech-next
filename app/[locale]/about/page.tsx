@@ -5,9 +5,9 @@ import { AboutApi, TeamApi } from "@/types";
 import React from "react";
 
 type Props = {
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
 export default async function AboutPage({ params }: Props) {

@@ -13,6 +13,7 @@ import { CustomButton, CustomCircleButton } from "../custom/buttons";
 import { MailICon, MenuIcon, PhoneICon, XIcon } from "../Icons";
 import HeaderLogo from "./Logo";
 import { DataApi, ServicesApi } from "@/types";
+import HeaderServicesAccordion from "./ServicesAccordion";
 
 type Props = {
   className?: string;
@@ -103,6 +104,9 @@ const HeaderMenu = ({ className, services, data }: Props) => {
               <div className="container flex flex-col gap-8 items-center justify-between min-h-full">
                 <div className="flex flex-col gap-6 items-center">
                   <CustomMenuLink href="/">{t("Header.home")}</CustomMenuLink>
+
+                  <HeaderServicesAccordion services={services} />
+
                   <CustomMenuLink href="/blogs">
                     {t("Header.blog")}
                   </CustomMenuLink>

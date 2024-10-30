@@ -60,6 +60,11 @@ body {
   color: var(--color-white-main);
   background: var(--color-blue-main);
   font-family: var(--font-gilroy), sans-serif;
+  // background: linear-gradient(
+  //     rgba(255, 255, 255, 0.87),
+  //     rgba(255, 255, 255, 0.87)
+  //   ),
+  //   url(../public/bg.png) left 50% top 0px / auto auto repeat;
   // min-height: 200vh;
 }
 

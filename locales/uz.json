@@ -50,5 +50,9 @@
   },
   "About": {
     "watch_video": "Kompaniya haqidagi video ko‘rish"
+  },
+  "Seo": {
+    "main_title": "Oiltech Service",
+    "main_description": "O‘zbekiston bozorida yuqori sifatli, innovatsion xizmatlar va kompleks yondashuv"
   }
 }

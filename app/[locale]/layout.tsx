@@ -1,5 +1,5 @@
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { NextIntlClientProvider, useTranslations } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 
@@ -12,6 +12,23 @@ import Providers from "./providers";
 import useFetchData from "../hooks/useFetchData";
 import { DataApi, ServicesApi } from "@/types";
 import ApplicationStatus from "@/components/ApplicationStatus";
+import { title } from "process";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("Seo");
+  return {
+    title: t("main_title"),
+    description: t("main_description"),
+    openGraph: {
+      images: "/thumbnail.png",
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,

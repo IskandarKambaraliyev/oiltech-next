@@ -112,3 +112,21 @@ export type DataApi = {
   linkedin: string;
   instagram: string;
 };
+
+export type CategoriesCategory = {
+  id: number;
+  title: string;
+  children: CategoriesCategory[];
+};
+
+export type CategoriesAnotherCatalog = {
+  id: number;
+  title: string;
+  img: string;
+  slug: string;
+};
+
+export type CategoriesApi = {
+  categories: CategoriesCategory[];
+  another_catalog: CategoriesAnotherCatalog[];
+};

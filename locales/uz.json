@@ -54,5 +54,11 @@
   "Seo": {
     "main_title": "Oiltech Service",
     "main_description": "O‘zbekiston bozorida yuqori sifatli, innovatsion xizmatlar va kompleks yondashuv"
+  },
+  "Products": {
+    "title": "Mahsulotlar",
+    "another_catalogs": "Boshqa katalog bo‘limlari",
+    "load_more": "Ko‘proq yuklash",
+    "related_products": "Mos keluvchi mahsulotlar"
   }
 }

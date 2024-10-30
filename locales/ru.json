@@ -54,5 +54,11 @@
   "Seo": {
     "main_title": "Oiltech Service",
     "main_description": "Высокое качество, инновационные сервисы и комплексный подход на рынке Узбекистана"
+  },
+  "Products": {
+    "title": "Продукты",
+    "another_catalogs": "Другие разделы каталога",
+    "load_more": "Загрузить еще",
+    "related_products": "Сопутствующие товары"
   }
 }

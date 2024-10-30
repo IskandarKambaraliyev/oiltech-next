@@ -33,7 +33,7 @@ const HomeAbout = ({ data }: Props) => {
             </Link>
 
             <div
-              className="p-4 lg:p-6 bg-green-main max-w-[40rem] text-xl line-clamp-[10]"
+              className="p-4 lg:p-6 bg-green-main max-w-[40rem] text-xl line-clamp-[10] text-white-main"
               dangerouslySetInnerHTML={{
                 __html: data.description.replace(/<img[^>]*>/g, ""),
               }}

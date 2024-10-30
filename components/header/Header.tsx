@@ -35,7 +35,7 @@ const Header = ({ services, data }: Props) => {
           <Link href="/">
             <HeaderLogo
               className={
-                sticky ? "text-white-main" : special ? "text-blue-main" : ""
+                special && !sticky ? "text-blue-main" : "text-white-main"
               }
             />
           </Link>

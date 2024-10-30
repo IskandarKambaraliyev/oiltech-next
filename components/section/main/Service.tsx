@@ -58,7 +58,7 @@ export default function Service({ item }: Props) {
         }}
       ></div>
 
-      <div className="container relative h-svh min-h-fit flex items-end pt-4 pb-8">
+      <div className="container relative h-svh min-h-fit flex items-end pt-4 pb-8 text-white-main">
         <div className="sticky bottom-8 left-0">
           <h4 className="font-semibold text-2xl md:text-[2rem] lg:text-[3rem] max-w-[40rem] line-clamp-4 leading-tight">
             {item.title}

@@ -20,7 +20,7 @@ const CardTeam = ({ item }: Props) => {
           className="size-full object-cover object-top grayscale-[1]"
         />
       </div>
-      <div className="flex-1 bg-green-main p-4 lg:p-6 flex flex-col gap-4">
+      <div className="flex-1 bg-green-main p-4 lg:p-6 flex flex-col gap-4 text-white-main">
         <div>
           <h6>{item.title}</h6>
           <p>{item.description}</p>

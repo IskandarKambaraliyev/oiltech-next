@@ -33,7 +33,7 @@ const HomeQuote = () => {
         >
           <path
             d="M16.2712 40H0L10.5763 0H22.7797L16.2712 40ZM41.4915 40H25.2203L35.7966 0H48L41.4915 40Z"
-            fill="white"
+            fill="currentColor"
           />
         </svg>
 
@@ -51,7 +51,7 @@ const HomeQuote = () => {
         >
           <path
             d="M6.50847 0H22.7797L12.2034 40H0L6.50847 0ZM31.7288 0H48L37.4237 40H25.2203L31.7288 0Z"
-            fill="white"
+            fill="currentColor"
           />
         </svg>
       </div>

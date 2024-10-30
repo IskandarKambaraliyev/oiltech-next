@@ -14,7 +14,7 @@ const CardBlog = ({ item }: Props) => {
   return (
     <Link
       href={`/blogs/${item.id}`}
-      className="flex flex-col gap-2 bg-white-100 hover:bg-white-200 text-white p-4 transition"
+      className="flex flex-col gap-2 bg-white-100 hover:bg-white-200 text-white-main p-4 transition border border-blue-100"
     >
       <div className="w-full aspect-[2/1]">
         <Image
@@ -27,7 +27,7 @@ const CardBlog = ({ item }: Props) => {
       </div>
 
       <div className="flex flex-col gap-8">
-        <div>
+        <div className="text-white-main">
           <h6 className="line-clamp-2 text-lg md:text-xl lg:text-2xl">
             {item.title}
           </h6>
@@ -35,7 +35,7 @@ const CardBlog = ({ item }: Props) => {
         </div>
 
         <div className="flex items-center gap-2">
-          <CalendarIcon className="size-4" />
+          <CalendarIcon className="size-4 text-white-main" />
           <span className="text-white-500 text-sm">
             {useDateFormatter(item.date_time)}
           </span>

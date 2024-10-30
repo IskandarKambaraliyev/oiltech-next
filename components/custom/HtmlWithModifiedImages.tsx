@@ -8,7 +8,7 @@ interface Props {
 }
 
 const HtmlWithModifiedImages: FC<Props> = ({ data, className = "" }) => {
-  const [modifiedHtml, setModifiedHtml] = useState<string>(data);
+  const [modifiedHtml, setModifiedHtml] = useState<string>("");
 
   useEffect(() => {
     const addDomainToImageSrc = (html: string) => {

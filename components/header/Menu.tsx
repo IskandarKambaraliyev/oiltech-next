@@ -88,7 +88,7 @@ const HeaderMenu = ({ className, services, data }: Props) => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3, type: "tween" }}
-            className="fixed inset-0 w-full h-screen bg-blue-750 text-white-main"
+            className="fixed inset-0 h-svh bg-blue-750 text-white-main"
           >
             <div className="container h-20 md:h-[6.5rem] flex items-center justify-between">
               <Link href="/">

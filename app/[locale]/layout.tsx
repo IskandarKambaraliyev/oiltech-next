@@ -14,6 +14,14 @@ import { DataApi, ServicesApi } from "@/types";
 import ApplicationStatus from "@/components/ApplicationStatus";
 import { title } from "process";
 
+export async function generateStaticParams() {
+  const locales = ["ru", "uz"];
+
+  return locales.map((locale) => ({
+    locale,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: {

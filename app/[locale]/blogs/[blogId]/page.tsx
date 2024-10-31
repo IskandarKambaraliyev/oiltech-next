@@ -4,14 +4,19 @@ import BlogDeatail from "@/components/section/blogs/Detail";
 
 import useApiRoute from "@/app/hooks/useApiRoute";
 
-import { BlogDetailApi } from "@/types";
+import { BlogDetailApi, BlogResults } from "@/types";
+import useFetchData from "@/app/hooks/useFetchData";
 
-async function getData(locale: string, blogId: string) {
-  return (await fetch(useApiRoute(`/blogs/${blogId}`, locale), {
-    next: {
-      revalidate: 600,
-    },
-  }).then((res) => res.json())) as BlogDetailApi;
+export async function generateStaticParams({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const blogs = await useFetchData<BlogResults>("/blogs", locale);
+
+  return blogs.map((blog) => ({
+    blogId: blog.id.toString(),
+  }));
 }
 
 export async function generateMetadata({
@@ -21,7 +26,7 @@ export async function generateMetadata({
 }) {
   const { locale, blogId } = await params;
 
-  const data = await getData(locale, blogId);
+  const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
   return {
     title: data.title,
     description: data.description.slice(0, 300),
@@ -35,7 +40,7 @@ export default async function BlogDetailPage({
   params: Promise<{ blogId: string; locale: string }>;
 }) {
   const { locale, blogId } = await params;
-  const data = await getData(locale, blogId);
+  const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
   return (
     <section className="py-28 bg-[#f7f7f7]">
       <BlogDeatail data={data} />

@@ -8,6 +8,7 @@ type Props = {
     locale: string;
   }>;
 };
+
 export default async function BlogsPage({ params }: Props) {
   const { locale } = await params;
 

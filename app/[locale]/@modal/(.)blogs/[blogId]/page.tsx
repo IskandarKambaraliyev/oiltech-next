@@ -1,16 +1,19 @@
 import InterceptedModal from "@/components/InterceptedModal";
 import BlogDeatail from "@/components/section/blogs/Detail";
 
-import useApiRoute from "@/app/hooks/useApiRoute";
+import { BlogDetailApi, BlogResults } from "@/types";
+import useFetchData from "@/app/hooks/useFetchData";
 
-import { BlogDetailApi } from "@/types";
+export async function generateStaticParams({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const blogs = await useFetchData<BlogResults>("/blogs", locale);
 
-async function getData(locale: string, blogId: string) {
-  return (await fetch(useApiRoute(`/blogs/${blogId}`, locale), {
-    next: {
-      revalidate: 600,
-    },
-  }).then((res) => res.json())) as BlogDetailApi;
+  return blogs.map((blog) => ({
+    blogId: blog.id.toString(),
+  }));
 }
 
 export default async function BlogDetailPage({
@@ -19,7 +22,8 @@ export default async function BlogDetailPage({
   params: Promise<{ locale: string; blogId: string }>;
 }) {
   const { locale, blogId } = await params;
-  const data = await getData(locale, blogId);
+
+  const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
   return (
     <div>
       <InterceptedModal>

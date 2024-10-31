@@ -31,6 +31,19 @@ async function getData({ locale, id }: { locale: string; id: string }) {
 type Props = {
   params: Promise<{ locale: string; productId: string }>;
 };
+
+export async function generateMetadata({ params }: Props) {
+  const { locale, productId } = await params;
+  const data = await getData({ locale, id: productId });
+  if (data) {
+    return {
+      title: data.title,
+      description: data.description || "Product description",
+      image: data.image,
+    };
+  }
+}
+
 export default async function ProductDetailPage({ params }: Props) {
   const { locale, productId } = await params;
   const t = await getTranslations();

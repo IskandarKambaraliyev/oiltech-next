@@ -3,7 +3,19 @@ import useFetchData from "@/app/hooks/useFetchData";
 import CatalogCategories from "@/components/section/products/Categories";
 import CategoriesHero from "@/components/section/products/CategoriesHero";
 import ProductsList from "@/components/section/products/List";
-import { ServicesChild } from "@/types";
+import { ServicesApi, ServicesChild } from "@/types";
+
+export async function generateStaticParams({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  const services = await useFetchData<ServicesApi>("/services", locale);
+
+  return services.map((service) => ({
+    serviceSlug: service.slug,
+  }));
+}
 
 type Props = {
   params: Promise<{ locale: string; serviceSlug: string }>;

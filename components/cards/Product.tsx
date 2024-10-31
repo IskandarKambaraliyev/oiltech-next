@@ -1,6 +1,5 @@
-import { Link } from "@/i18n/routing";
-import { ProductChild } from "@/types";
 import Image from "next/image";
+import { Link } from "@/i18n/routing";
 
 type Props = {
   id: number;

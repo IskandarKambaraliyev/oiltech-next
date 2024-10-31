@@ -12,11 +12,18 @@ type Props = {
   }>;
 };
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  const about = await useFetchData<AboutApi>("/about_company", locale);
+
   const t = await getTranslations("Seo");
 
   return {
     title: t("about_title"),
+    openGraph: {
+      images: [about.picture],
+    },
   };
 }
 

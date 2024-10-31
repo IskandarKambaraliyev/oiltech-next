@@ -6,6 +6,7 @@ import useApiRoute from "@/app/hooks/useApiRoute";
 
 import { BlogDetailApi, BlogResults } from "@/types";
 import useFetchData from "@/app/hooks/useFetchData";
+import { Metadata } from "next";
 
 export async function generateStaticParams({
   params: { locale },
@@ -23,14 +24,16 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string; blogId: string }>;
-}) {
+}): Promise<Metadata> {
   const { locale, blogId } = await params;
 
   const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
   return {
     title: data.title,
     description: data.description.slice(0, 300),
-    image: data.image,
+    openGraph: {
+      images: [data.image],
+    },
   };
 }
 

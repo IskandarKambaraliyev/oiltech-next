@@ -107,12 +107,29 @@ function FormInput({
   className,
   placeholder = "",
 }: FormInputProps) {
+  if (type === "textarea") {
+    return (
+      <textarea
+        name={name}
+        cols={3}
+        className={cn(
+          "w-full ring-1 ring-transparent outline-none text-white-main placeholder:text-white-500 px-4 hover:ring-white-400 focus:ring-white-main py-4 h-28 resize-none",
+          className,
+          {
+            "bg-white-100 focus:bg-white-200": color === "white",
+            "bg-blue-500 focus:bg-blue-600": color === "blue",
+          }
+        )}
+        placeholder={placeholder}
+      />
+    );
+  }
   return (
     <input
       type={type}
       name={name}
       className={cn(
-        "w-full ring-1 ring-transparent outline-none h-14 text-white-main placeholder:text-white-500 px-4 hover:ring-white-400 focus:ring-white-main ",
+        "w-full ring-1 ring-transparent outline-none h-14 text-white-main placeholder:text-white-500 px-4 hover:ring-white-400 focus:ring-white-main",
         className,
         {
           "bg-white-100 focus:bg-white-200": color === "white",

@@ -59,6 +59,7 @@
     "title": "Продукты",
     "another_catalogs": "Другие разделы каталога",
     "load_more": "Загрузить еще",
-    "related_products": "Сопутствующие товары"
+    "related_products": "Сопутствующие товары",
+    "no_products": "Нет товаров"
   }
 }

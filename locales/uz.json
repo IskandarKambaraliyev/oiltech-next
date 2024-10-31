@@ -59,6 +59,7 @@
     "title": "Mahsulotlar",
     "another_catalogs": "Boshqa katalog bo‘limlari",
     "load_more": "Ko‘proq yuklash",
-    "related_products": "Mos keluvchi mahsulotlar"
+    "related_products": "Mos keluvchi mahsulotlar",
+    "no_products": "Mahsulotlar topilmadi"
   }
 }

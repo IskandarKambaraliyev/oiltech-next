@@ -130,3 +130,33 @@ export type CategoriesApi = {
   categories: CategoriesCategory[];
   another_catalog: CategoriesAnotherCatalog[];
 };
+
+export type ProductChild = {
+  id: number;
+  title: string;
+  image: string;
+  description: string | null;
+};
+
+export type ProductsGetApi = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: ProductChild[];
+  id: number;
+  title: string;
+};
+
+export type ProductDetailApi = {
+  id: number;
+  image: string;
+  title: string;
+  description: string | null;
+  info: string | null;
+  content: string | null;
+  category: {
+    id: number;
+    title: string;
+  }[];
+  related_products: ProductChild[];
+};

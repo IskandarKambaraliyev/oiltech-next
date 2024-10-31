@@ -53,7 +53,7 @@ const Footer = ({ data }: Props) => {
                 width="560"
                 height="365"
                 allowFullScreen={true}
-                className="w-full max-[450px]:h-[250px] min-[450px]: h-[400px]"
+                className="w-full max-[450px]:h-[250px] min-[450px]:h-[340px]"
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-popups"
                 title="Yandex Map"

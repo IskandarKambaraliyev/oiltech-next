@@ -41,7 +41,7 @@ export const HeaderProvider: FC<HeaderProviderProps> = ({ children }) => {
   }
 
   useEffect(() => {
-    setSpecial(pathname.includes("/blogs/"));
+    setSpecial(pathname.includes("/blogs/") || pathname.includes("/products/product/"));
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);

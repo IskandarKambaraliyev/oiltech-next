@@ -37,6 +37,7 @@ type CatalogPageContextType = {
   nextUrl: string | null;
   productsLoading: boolean;
   loadMore: () => void;
+  loaded: boolean;
 };
 
 const CatalogPageContext = createContext<CatalogPageContextType | undefined>(
@@ -58,6 +59,7 @@ export const CatalogPageProvider: React.FC<{
   const [products, setProducts] = useState<ProductChild[]>([]);
   const [nextUrl, setNextUrl] = useState<string | null>(null);
   const [productsLoading, setProductsLoading] = useState<boolean>(false);
+  const [loaded, setLoaded] = useState<boolean>(false);
 
   const fetchProducts = async (id: number) => {
     try {
@@ -122,10 +124,11 @@ export const CatalogPageProvider: React.FC<{
             subsub: null,
           });
           fetchProducts(activeId);
-          console.log(activeId);
         }
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoaded(true);
       }
     };
     fetchCategories();
@@ -186,6 +189,7 @@ export const CatalogPageProvider: React.FC<{
         nextUrl,
         productsLoading,
         loadMore: fetchNextProducts,
+        loaded,
       }}
     >
       {children}

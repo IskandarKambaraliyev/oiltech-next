@@ -38,6 +38,7 @@ type CatalogPageContextType = {
   productsLoading: boolean;
   loadMore: () => void;
   loaded: boolean;
+  productsFirstLoad: boolean;
 };
 
 const CatalogPageContext = createContext<CatalogPageContextType | undefined>(
@@ -59,11 +60,13 @@ export const CatalogPageProvider: React.FC<{
   const [products, setProducts] = useState<ProductChild[]>([]);
   const [nextUrl, setNextUrl] = useState<string | null>(null);
   const [productsLoading, setProductsLoading] = useState<boolean>(false);
+  const [productsFirstLoad, setProductsFirstLoad] = useState<boolean>(false);
   const [loaded, setLoaded] = useState<boolean>(false);
 
   const fetchProducts = async (id: number) => {
     try {
       setProductsLoading(true);
+
       const res = await fetch(
         useApiRoute(`/products/get/${id}/?limit=12`, locale),
         {
@@ -80,6 +83,10 @@ export const CatalogPageProvider: React.FC<{
       console.log(error);
     } finally {
       setProductsLoading(false);
+
+      if (productsFirstLoad) {
+        setProductsFirstLoad(true);
+      }
     }
   };
 
@@ -190,6 +197,7 @@ export const CatalogPageProvider: React.FC<{
         productsLoading,
         loadMore: fetchNextProducts,
         loaded,
+        productsFirstLoad,
       }}
     >
       {children}

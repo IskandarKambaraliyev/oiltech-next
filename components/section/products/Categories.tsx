@@ -7,14 +7,16 @@ import { CategoriesCategory } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode, useEffect, useState } from "react";
 
-const CatalogCategories = () => {
+const CatalogCategories = ({ className = "" }: { className?: string }) => {
   const { categories, changeActiveCategory } = useCatalogPage();
 
   const lists = categories?.categories;
 
   if (lists && lists.length > 0) {
     return (
-      <div className="w-full flex flex-col">
+      <div
+        className={`w-full flex flex-col lg:w-[20rem] lg:bg-white lg:px-4 lg:py-2 lg:h-fit lg:sticky lg:top-[7.5rem] ${className}`}
+      >
         {lists.map((cat) => (
           <Category
             item={cat}

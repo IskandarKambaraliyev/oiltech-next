@@ -50,9 +50,7 @@ export default async function ServiceCatalogPage({ params }: Props) {
 
       <section className="bg-[#f7f7f7] py-8 text-blue-main">
         <div className="container flex gap-x-12 relative">
-          <div className="w-[20rem] bg-white p-2 md:p-4 max-lg:hidden h-fit sticky top-[6rem] md:top-[7.5rem]">
-            <CatalogCategories />
-          </div>
+          <CatalogCategories className="max-lg:hidden" />
 
           <ProductsList />
         </div>

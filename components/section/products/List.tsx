@@ -18,6 +18,7 @@ const ProductsList = () => {
     loadMore,
     categories,
     loaded,
+    productsFirstLoad,
   } = useCatalogPage();
   const [isOpen, setIsOpen] = useState(true);
 
@@ -65,7 +66,7 @@ const ProductsList = () => {
           </div>
         )}
 
-        {productsLoading ? (
+        {productsFirstLoad ? (
           <div className="w-full h-[20rem] bg-black/10 animate-pulse rounded-md"></div>
         ) : products && products.length > 0 ? (
           <div className="w-full flex flex-col items-start gap-4">

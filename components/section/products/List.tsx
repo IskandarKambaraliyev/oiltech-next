@@ -4,41 +4,58 @@ import { useCatalogPage } from "@/app/context/CatalogPageContext";
 import CardProduct from "@/components/cards/Product";
 import { FilterIcon } from "@/components/Icons";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CatalogCategories from "./Categories";
 import { CustomButton } from "@/components/custom/buttons";
 import { useTranslations } from "next-intl";
 
 const ProductsList = () => {
   const t = useTranslations("Products");
-  const { products, productsLoading, active, nextUrl, loadMore } =
+  const { products, productsLoading, active, nextUrl, loadMore, categories } =
     useCatalogPage();
   const [isOpen, setIsOpen] = useState(true);
 
+  const [hasCategories, setHasCategories] = useState(true);
+
+  useEffect(() => {
+    if (categories?.categories && categories.categories.length > 0) {
+      setHasCategories(true);
+    } else {
+      setHasCategories(false);
+    }
+  }, [categories]);
   return (
     <div className="flex-1 flex flex-col gap-4">
       <div className="flex gap-4 justify-between">
         <h2 className="flex-1 text-xl md:text-2xl font-semibold">
-          {active.title}
+          {active.title
+            ? active.title
+            : hasCategories
+            ? categories?.categories[0].title
+            : "No categories"}
         </h2>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`shrink-0 size-8 lg:hidden transition ${
-            isOpen ? "bg-green-main text-white-main" : ""
-          }`}
-        >
-          <FilterIcon />
-        </button>
+        {hasCategories && (
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`shrink-0 size-8 lg:hidden transition ${
+              isOpen ? "bg-green-main text-white-main" : ""
+            }`}
+          >
+            <FilterIcon />
+          </button>
+        )}
       </div>
 
-      <div
-        className={`bg-white px-4 py-2 will-change-contents lg:hidden ${
-          isOpen ? "block" : "hidden"
-        }`}
-      >
-        <CatalogCategories />
-      </div>
+      {hasCategories && (
+        <div
+          className={`bg-white px-4 py-2 will-change-contents lg:hidden ${
+            isOpen ? "block" : "hidden"
+          }`}
+        >
+          <CatalogCategories />
+        </div>
+      )}
 
       {products && products.length > 0 ? (
         <div className="w-full flex flex-col items-start gap-4">

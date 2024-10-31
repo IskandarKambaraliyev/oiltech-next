@@ -4,6 +4,7 @@ import CatalogCategories from "@/components/section/products/Categories";
 import CategoriesHero from "@/components/section/products/CategoriesHero";
 import ProductsList from "@/components/section/products/List";
 import { ServicesApi, ServicesChild } from "@/types";
+import { Metadata } from "next";
 
 export async function generateStaticParams({
   params: { locale },
@@ -20,6 +21,21 @@ export async function generateStaticParams({
 type Props = {
   params: Promise<{ locale: string; serviceSlug: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { serviceSlug, locale } = await params;
+
+  const service = await useFetchData<ServicesChild>(
+    `/services/${serviceSlug}`,
+    locale
+  );
+  return {
+    title: service.title,
+    openGraph: {
+      images: [service.image],
+    },
+  };
+}
 
 export default async function ServiceCatalogPage({ params }: Props) {
   const { locale, serviceSlug } = await params;

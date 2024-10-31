@@ -53,7 +53,9 @@
   },
   "Seo": {
     "main_title": "Oiltech Service",
-    "main_description": "O‘zbekiston bozorida yuqori sifatli, innovatsion xizmatlar va kompleks yondashuv"
+    "main_description": "O‘zbekiston bozorida yuqori sifatli, innovatsion xizmatlar va kompleks yondashuv",
+    "about_title": "Biz haqimizda - Oiltech Service",
+    "blogs_title": "Maqolalar - Oiltech Service"
   },
   "Products": {
     "title": "Mahsulotlar",

@@ -42,7 +42,7 @@ const AboutHero = ({ data }: Props) => {
         </section>
 
         <section className="py-16">
-          <div className="container">
+          <div className="container relative">
             <HtmlWithModifiedImages
               data={data.description}
               className="max-w-[50rem] lg:max-w-[65rem] text-2xl lg:text-[2rem] leading-tight"

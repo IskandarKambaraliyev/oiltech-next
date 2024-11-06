@@ -25,7 +25,7 @@ const HomeTeam = ({ data }: Props) => {
   if (data !== null && data.length > 0) {
     return (
       <section className="py-20">
-        <div className="container">
+        <div className="container relative">
           <CustomSectionTitle>{t("our_team")}</CustomSectionTitle>
           <CustomTitle className="mb-8">{t("team_title")}</CustomTitle>
 

@@ -29,7 +29,7 @@ const Footer = ({ data }: Props) => {
   if (data !== null) {
     return (
       <footer id="contacts" className="pt-12 pb-8 bg-blue-main text-white">
-        <div className="container">
+        <div className="container relative">
           <div className="">
             <CustomSectionTitle>{t("Footer.title")}</CustomSectionTitle>
             <CustomTitle>{t("Footer.contacts")}</CustomTitle>

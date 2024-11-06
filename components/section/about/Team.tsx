@@ -12,7 +12,7 @@ const AboutTeam = ({ data }: Props) => {
   const t = useTranslations();
   return (
     <section className="pb-20">
-      <div className="container space-y-8">
+      <div className="container space-y-8 relative">
         <div>
           <CustomSectionTitle>{t("our_team")}</CustomSectionTitle>
           <CustomTitle>{t("team_title")}</CustomTitle>

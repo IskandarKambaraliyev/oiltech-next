@@ -13,6 +13,7 @@ import useFetchData from "../hooks/useFetchData";
 import { DataApi, ServicesApi } from "@/types";
 import ApplicationStatus from "@/components/ApplicationStatus";
 import { title } from "process";
+import AnimatedBackground from "@/components/AnimtedBackground";
 
 export async function generateStaticParams() {
   const locales = ["ru", "uz"];
@@ -63,6 +64,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <Providers>
+        <AnimatedBackground />
         <Header services={services} data={dataApi} />
         <HeaderCatalogModal />
         <ApplicationStatus />

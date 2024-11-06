@@ -14,7 +14,7 @@ const HomeAdvantages = ({ data }: Props) => {
   if (data !== null && data.length > 0) {
     return (
       <section className="py-20">
-        <div className="container flex flex-col gap-6 md:gap-8">
+        <div className="container flex flex-col gap-6 md:gap-8 relative">
           <CustomSectionTitle>{t("advantages")}</CustomSectionTitle>
 
           <div className="w-full h-[1px] bg-green-main"></div>

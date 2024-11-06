@@ -8,7 +8,7 @@ const BlogsHero = () => {
 
   const image = "/blogs.png";
   return (
-    <section className="relative">
+    <section className="relative z-[0]">
       <Image
         src={image}
         alt="Page banner image"

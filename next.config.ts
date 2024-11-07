@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  assetPrefix: "/_next/",
 };
 
 export default withNextIntl(nextConfig);

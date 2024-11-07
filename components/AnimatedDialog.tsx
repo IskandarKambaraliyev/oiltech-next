@@ -57,7 +57,7 @@ function DialogProvider({ children, transition, href }: DialogProviderProps) {
 
   // useEffect(() => {
   //   if (isOpen) {
-  //     window.history.pushState({ path: href }, "", href);
+  //     if (typeof window !== undefined) window.history.pushState({ path: href }, "", href);
   //     document.body.style.overflow = "hidden";
   //   } else {
   //     window.history.back();
@@ -105,7 +105,8 @@ function DialogTrigger({
     setIsOpen(!isOpen);
 
     if (!isOpen) {
-      window.history.pushState({ path: href }, "", href);
+      if (typeof window !== undefined)
+        window.history.pushState({ path: href }, "", href);
       document.body.style.overflow = "hidden";
     }
   }, [isOpen, setIsOpen]);

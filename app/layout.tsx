@@ -59,6 +59,14 @@ export const metadata: Metadata = {
   openGraph: {
     images: ["/thumbnail.png"],
   },
+  metadataBase: new URL("https://oiltech.uz"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      ru: "/ru",
+      uz: "/uz",
+    },
+  },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",

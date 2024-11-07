@@ -19,7 +19,7 @@ const InterceptedModal = ({ children }: Props) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!pathname.includes("/blogs/")) {
+    if (!pathname.includes("/blogs/") && typeof window !== "undefined") {
       window.location.reload();
     }
   }, [pathname]);

@@ -14,6 +14,7 @@ import { DataApi, ServicesApi } from "@/types";
 import ApplicationStatus from "@/components/ApplicationStatus";
 import { title } from "process";
 import AnimatedBackground from "@/components/AnimtedBackground";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const locales = ["ru", "uz"];
@@ -23,12 +24,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Seo");
   return {
     title: t("main_title"),

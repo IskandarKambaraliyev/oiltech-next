@@ -1,8 +1,6 @@
-// import { convert } from "html-to-text";
+import { convert } from "html-to-text";
 
 import BlogDeatail from "@/components/section/blogs/Detail";
-
-import useApiRoute from "@/app/hooks/useApiRoute";
 
 import { BlogDetailApi, BlogResults } from "@/types";
 import useFetchData from "@/app/hooks/useFetchData";
@@ -30,7 +28,7 @@ export async function generateMetadata({
   const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
   return {
     title: data.title,
-    description: data.description.slice(0, 300),
+    description: convert(data.description).slice(0, 300),
     openGraph: {
       images: [data.image],
     },

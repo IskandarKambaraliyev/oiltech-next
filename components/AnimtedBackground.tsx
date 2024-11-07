@@ -14,12 +14,10 @@ const AnimatedBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const points = useRef<Point[]>([]);
   const target = useRef({
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
+    x: 0,
+    y: 0,
   });
   const animateHeader = useRef(true);
-  const [canvasWidth, setCanvasWidth] = useState(window.innerWidth);
-  const [canvasHeight, setCanvasHeight] = useState(window.innerHeight);
 
   const initHeader = () => {
     const canvas = canvasRef.current;
@@ -27,6 +25,9 @@ const AnimatedBackground: React.FC = () => {
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
 
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
@@ -68,9 +69,7 @@ const AnimatedBackground: React.FC = () => {
   };
 
   const resize = () => {
-    setCanvasWidth(window.innerWidth);
-    setCanvasHeight(window.innerHeight);
-    initHeader(); // Refresh canvas size and reset points only if size changes
+    initHeader();
   };
 
   const getDistance = (p1: Point, p2: Point) => {
@@ -84,6 +83,8 @@ const AnimatedBackground: React.FC = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
     points.current.forEach((p) => {

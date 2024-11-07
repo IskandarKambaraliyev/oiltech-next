@@ -60,12 +60,6 @@ body {
   color: var(--color-white-main);
   background: var(--color-blue-main);
   font-family: var(--font-gilroy), sans-serif;
-  // background: linear-gradient(
-  //     rgba(255, 255, 255, 0.87),
-  //     rgba(255, 255, 255, 0.87)
-  //   ),
-  //   url(../public/bg.png) left 50% top 0px / auto auto repeat;
-  // min-height: 200vh;
 }
 
 .container {
@@ -75,43 +69,38 @@ body {
   width: calc(100% - 2 * var(--spacing-container));
 }
 
-.custom-scrollbar {
-  @media screen and (hover: hover) {
-    &::-webkit-scrollbar {
-      width: 0.25rem;
-      height: 0.25rem;
-    }
+@media screen and (hover: hover) {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
 
-    &::-webkit-scrollbar-thumb {
-      @apply bg-blue-400;
-      border-radius: 1rem;
-    }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-blue-400;
+    border-radius: 1rem;
   }
 }
 
-.hero_swiper {
-  .swiper-pagination-bullet {
-    background-color: rgba(255, 255, 255, 0.4);
-    opacity: 1;
-    position: relative;
-    margin: 0 0.25rem;
+.hero_swiper .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  position: relative;
+  margin: 0 0.25rem;
+}
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: -0.1875rem;
-      border: 0.0625rem solid transparent;
-      border-radius: 100%;
-    }
+.hero_swiper .swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  inset: -0.1875rem;
+  border: 0.0625rem solid transparent;
+  border-radius: 100%;
+}
+.hero_swiper .swiper-pagination-bullet-active {
+  background-color: var(--color-white-main);
+}
 
-    &-active {
-      background-color: var(--color-white-main);
-
-      &::before {
-        border: 0.0625rem solid var(--color-white-main);
-      }
-    }
-  }
+.hero_swiper .swiper-pagination-bullet-active::before {
+  border: 0.0625rem solid var(--color-white-main);
 }
 
 @media screen and (min-width: 1280px) {

@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 
 import { NextUIProvider } from "@nextui-org/system";
 
-import "./globals.scss";
+import "./globals.css";
 
 const gilroy = localFont({
   src: [

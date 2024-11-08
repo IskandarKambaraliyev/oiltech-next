@@ -57,7 +57,7 @@ export async function DialogComponent({ item, locale }: Props) {
           <DialogContent className="relative h-auto w-full text-blue-main">
             <ScrollArea className="h-[100vh]" type="scroll">
               <div className="relative bg-white w-[calc(100%-2rem)] max-w-[75rem] mt-24 mb-28 mx-auto p-4 md:p-6">
-                <DialogTitle className="text-2xl md:text-[1.75rem] leading-tight font-semibold">
+                <DialogTitle className="text-base md:text-[1.75rem] leading-tight font-semibold">
                   {data.title}
                 </DialogTitle>
                 <DialogImage
@@ -65,9 +65,10 @@ export async function DialogComponent({ item, locale }: Props) {
                   alt={`Image for - ${data.title}`}
                   className="w-full aspect-[2/1] object-cover my-4"
                 />
-                <DialogSubtitle>
+                <HtmlWithModifiedImages data={data.description} />
+                {/* <DialogSubtitle>
                   <HtmlWithModifiedImages data={data.description} />
-                </DialogSubtitle>
+                </DialogSubtitle> */}
 
                 {data.related_products && data.related_products.length > 0 && (
                   <div className="flex flex-col gap-2 mt-8">

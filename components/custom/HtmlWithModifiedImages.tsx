@@ -34,7 +34,7 @@ const HtmlWithModifiedImages: FC<Props> = ({ data, className = "" }) => {
   return (
     <div
       dangerouslySetInnerHTML={{ __html: modifiedHtml }}
-      className={className}
+      className={`dangerous-html ${className}`}
     />
   );
 };

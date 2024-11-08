@@ -37,7 +37,7 @@ export async function DialogComponent({ item, locale }: Props) {
         }}
         href={`/${locale}/blogs/${item.id}`}
       >
-        <DialogTrigger className="bg-white-100 hover:bg-white-200 p-4 overflow-hidden">
+        <DialogTrigger className="bg-white-100 hover:bg-white-200 p-4 overflow-hidden backdrop-blur-sm">
           <DialogImage
             src={item.image}
             alt={`Image for - ${item.title}`}
@@ -56,7 +56,7 @@ export async function DialogComponent({ item, locale }: Props) {
         <DialogContainer>
           <DialogContent className="relative h-auto w-full text-blue-main">
             <ScrollArea className="h-[100vh]" type="scroll">
-              <div className="relative bg-white w-[calc(100%-2rem)] max-w-[75rem] mt-20 mb-28 mx-auto p-4 md:p-6">
+              <div className="relative bg-white w-[calc(100%-2rem)] max-w-[75rem] mt-24 mb-28 mx-auto p-4 md:p-6">
                 <DialogTitle className="text-2xl md:text-[1.75rem] leading-tight font-semibold">
                   {data.title}
                 </DialogTitle>

@@ -113,7 +113,7 @@ function FormInput({
         name={name}
         cols={3}
         className={cn(
-          "w-full ring-1 ring-transparent outline-none text-white-main placeholder:text-white-500 px-4 hover:ring-white-400 focus:ring-white-main py-4 h-28 resize-none",
+          "w-full ring-1 ring-transparent outline-none text-white-main placeholder:text-white-500 px-4 hover:ring-white-400 focus:ring-white-main py-4 h-28 resize-none backdrop-blur-sm",
           className,
           {
             "bg-white-100 focus:bg-white-200": color === "white",
@@ -129,7 +129,7 @@ function FormInput({
       type={type}
       name={name}
       className={cn(
-        "w-full ring-1 ring-transparent outline-none h-14 text-white-main placeholder:text-white-500 px-4 hover:ring-white-400 focus:ring-white-main",
+        "w-full ring-1 ring-transparent outline-none h-14 text-white-main placeholder:text-white-500 px-4 hover:ring-white-400 focus:ring-white-main backdrop-blur-sm",
         className,
         {
           "bg-white-100 focus:bg-white-200": color === "white",

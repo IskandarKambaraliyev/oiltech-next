@@ -100,7 +100,7 @@ const HeaderMenu = ({ className, services, data }: Props) => {
               </CustomCircleButton>
             </div>
 
-            <div className="w-full h-[calc(100vh-5rem)] md:h-[calc(100vh-6.5rem)] overflow-y-auto py-20">
+            <div className="w-full h-[calc(100vh-5rem)] md:h-[calc(100vh-6.5rem)] overflow-y-auto pt-20 pb-28">
               <div className="container flex flex-col gap-8 items-center justify-between min-h-full">
                 <div className="w-full flex flex-col gap-6 items-center">
                   <CustomMenuLink href="/">{t("Header.home")}</CustomMenuLink>

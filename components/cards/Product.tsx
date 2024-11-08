@@ -11,7 +11,7 @@ const CardProduct = ({ id, title, image, description }: Props) => {
   return (
     <Link
       href={`/products/product/${id}`}
-      className="flex flex-col gap-4 p-4 bg-white border border-blue-100 hover:bg-blue-100"
+      className="flex flex-col gap-4 p-4 bg-white border border-blue-100 hover:bg-blue-100 backdrop-blur-sm"
       style={{
         boxShadow: "0px 4px 27px 0px rgba(0, 0, 0, 0.03)",
       }}

@@ -117,7 +117,7 @@ const AnimatedBackground: React.FC = () => {
   const drawCircle = (ctx: CanvasRenderingContext2D, p: Point) => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, 4, 0, 2 * Math.PI);
-    ctx.fillStyle = `rgba(0,198,183,${p.active ? p.active * 0.2 : 0})`;
+    ctx.fillStyle = `rgba(0,198,183,${p.active ? p.active * 0.7 : 0})`;
     ctx.fill();
   };
 

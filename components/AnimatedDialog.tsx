@@ -20,6 +20,7 @@ import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
 import useClickOutside from "@/app/hooks/useClickOutside";
 import { XIcon } from "lucide-react";
+import { usePathname } from "@/i18n/routing";
 
 interface DialogContextType {
   isOpen: boolean;
@@ -49,21 +50,25 @@ function DialogProvider({ children, transition, href }: DialogProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const uniqueId = useId();
   const triggerRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   const contextValue = useMemo(
     () => ({ isOpen, setIsOpen, uniqueId, triggerRef, href }),
     [isOpen, uniqueId]
   );
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     if (typeof window !== undefined) window.history.pushState({ path: href }, "", href);
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     window.history.back();
-  //     document.body.style.overflow = "auto";
-  //   }
-  // }, [isOpen]);
+  useEffect(() => {
+    if (!pathname.includes("/blogs/")) {
+      setIsOpen(false);
+      document.body.style.overflow = "auto";
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   return (
     <DialogContext.Provider value={contextValue}>
@@ -191,16 +196,6 @@ function DialogContent({ children, className, style }: DialogContent) {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-hidden");
-      // const focusableElements = containerRef.current?.querySelectorAll(
-      //   'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      // );
-      // if (focusableElements && focusableElements.length > 0) {
-      //   setFirstFocusableElement(focusableElements[0] as HTMLElement);
-      //   setLastFocusableElement(
-      //     focusableElements[focusableElements.length - 1] as HTMLElement
-      //   );
-      //   (focusableElements[0] as HTMLElement).focus();
-      // }
     } else {
       document.body.classList.remove("overflow-hidden");
       triggerRef.current?.focus();
@@ -398,7 +393,7 @@ function DialogClose({ children, className, variants }: DialogCloseProps) {
       aria-label="Close dialog"
       key={`dialog-close-${uniqueId}`}
       className={cn(
-        "absolute right-6 top-6 size-8 bg-blue-main flex-center",
+        "absolute right-6 top-8 size-8 bg-blue-main hover:bg-green-main flex-center",
         className
       )}
       initial="initial"

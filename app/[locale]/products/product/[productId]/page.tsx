@@ -38,28 +38,40 @@ export default async function ProductDetailPage({ params }: Props) {
   if (data) {
     return (
       <section className="bg-[#f7f7f7] text-blue-main pt-28 pb-12">
-        <div className="container flex flex-col gap-8">
+        <div className="container flex flex-col gap-8 relative">
           <div className="flex max-md:flex-col gap-x-16 gap-y-8">
             <Image
               src={data.image}
               alt={`Product image of ${data.title}`}
               width={500}
               height={500}
-              className="!relative md:flex-1 w-full h-auto object-contain"
+              className="!relative md:flex-1 w-full max-w-[30rem] h-auto object-contain"
             />
 
             <div className="md:flex-[1.2] flex flex-col gap-4 md:gap-8">
-              <h1 className="text-2xl md:text-[2rem] font-semibold">
+              <h1 className="text-2xl md:text-[2rem] lg:text-[2.5rem] font-semibold">
                 {data.title}
               </h1>
 
-              {data.description && <p>{data.description}</p>}
+              {data.description && (
+                <p className="text-base lg:text-lg">{data.description}</p>
+              )}
 
-              {data.info && <HtmlWithModifiedImages data={data.info} />}
+              {data.info && (
+                <HtmlWithModifiedImages
+                  className="text-base lg:text-lg"
+                  data={data.info}
+                />
+              )}
             </div>
           </div>
 
-          {data.content && <HtmlWithModifiedImages data={data.content} />}
+          {data.content && (
+            <HtmlWithModifiedImages
+              className="text-base lg:text-lg"
+              data={data.content}
+            />
+          )}
 
           {data.related_products && data.related_products.length > 0 && (
             <div className="flex flex-col gap-2">

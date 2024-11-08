@@ -393,7 +393,7 @@ function DialogClose({ children, className, variants }: DialogCloseProps) {
       aria-label="Close dialog"
       key={`dialog-close-${uniqueId}`}
       className={cn(
-        "absolute right-6 top-8 size-8 bg-blue-main hover:bg-green-main flex-center",
+        " right-6 top-8 size-8 bg-blue-main hover:bg-green-main flex-center",
         className
       )}
       initial="initial"

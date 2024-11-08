@@ -57,9 +57,12 @@ export async function DialogComponent({ item, locale }: Props) {
           <DialogContent className="relative h-auto w-full text-blue-main">
             <ScrollArea className="h-[100vh]" type="scroll">
               <div className="relative bg-white w-[calc(100%-2rem)] max-w-[75rem] mt-24 mb-28 mx-auto p-4 md:p-6">
-                <DialogTitle className="text-base md:text-[1.75rem] leading-tight font-semibold">
-                  {data.title}
-                </DialogTitle>
+                <div className="flex items-start gap-4">
+                  <DialogTitle className="text-base md:text-[1.75rem] leading-tight font-semibold flex-1">
+                    {data.title}
+                  </DialogTitle>
+                  <DialogClose className="text-white-main shrink-0" />
+                </div>
                 <DialogImage
                   src={data.image}
                   alt={`Image for - ${data.title}`}
@@ -99,7 +102,6 @@ export async function DialogComponent({ item, locale }: Props) {
                 </div>
               </div>
             </ScrollArea>
-            <DialogClose className="text-white-main" />
           </DialogContent>
         </DialogContainer>
       </Dialog>

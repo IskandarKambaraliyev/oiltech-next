@@ -60,7 +60,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <Providers>
-        <AnimatedBackground />
+        {/* <AnimatedBackground /> */}
         <Header services={services} data={dataApi} />
         <HeaderCatalogModal />
         <ApplicationStatus />

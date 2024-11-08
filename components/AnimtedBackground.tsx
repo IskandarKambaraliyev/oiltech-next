@@ -109,7 +109,8 @@ const AnimatedBackground: React.FC = () => {
     p.closest.forEach((c) => {
       ctx.moveTo(p.x, p.y);
       ctx.lineTo(c.x, c.y);
-      ctx.strokeStyle = `rgba(0,198,183,${p.active ? p.active * 0.2 : 0})`;
+      ctx.strokeStyle = `rgba(0,198,183,0.05)`;
+      // ctx.strokeStyle = `rgba(0,198,183,${p.active ? p.active * 0.1 : 0})`;
       ctx.stroke();
     });
   };
@@ -117,7 +118,8 @@ const AnimatedBackground: React.FC = () => {
   const drawCircle = (ctx: CanvasRenderingContext2D, p: Point) => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, 4, 0, 2 * Math.PI);
-    ctx.fillStyle = `rgba(0,198,183,${p.active ? p.active * 0.7 : 0})`;
+    ctx.fillStyle = `rgba(0,198,183,0.01)`;
+    // ctx.fillStyle = `rgba(0,198,183,${p.active ? p.active * 0.35 : 0})`;
     ctx.fill();
   };
 

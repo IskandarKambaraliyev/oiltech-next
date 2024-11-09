@@ -79,7 +79,7 @@ const HeaderCatalogModal = () => {
                 className="absolute top-4 right-4 size-8"
                 onClick={() => setCatalog(false)}
               >
-                <XIcon className="size-full" />
+                <XIcon className="size-full text-white-main" />
               </button>
               <div className="size-[6rem] md:size-[8rem]">
                 <svg
@@ -125,7 +125,7 @@ const HeaderCatalogModal = () => {
               </div>
 
               <div className="flex flex-col w-full gap-4 md:gap-8">
-                <CustomTitle className="text-center">
+                <CustomTitle className="text-center text-white-main">
                   {t("get_catalog")}
                 </CustomTitle>
 

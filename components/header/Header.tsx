@@ -24,10 +24,10 @@ const Header = ({ services, data }: Props) => {
     <header
       className={`${
         sticky
-          ? "bg-black/30 backdrop-blur-lg"
+          ? "bg-black/30 backdrop-blur-lg text-white-main"
           : special
           ? "bg-transparent text-blue-main"
-          : "bg-transparent"
+          : "bg-transparent text-white-main"
       } fixed top-0 left-0 w-full h-20 md:h-[6.5rem] flex-center z-header transition`}
     >
       <div className="container flex items-center justify-between">

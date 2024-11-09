@@ -27,7 +27,7 @@ const BlogsHero = () => {
         <h1 className="text-base md:text-2xl text-green-main font-semibold">
           {t("blog")}
         </h1>
-        <CustomTitle>{t("blog_title")}</CustomTitle>
+        <CustomTitle className="text-white-main">{t("blog_title")}</CustomTitle>
       </div>
     </section>
   );

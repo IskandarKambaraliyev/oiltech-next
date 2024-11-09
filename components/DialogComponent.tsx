@@ -37,7 +37,7 @@ export async function DialogComponent({ item, locale }: Props) {
         }}
         href={`/${locale}/blogs/${item.id}`}
       >
-        <DialogTrigger className="bg-white-100 hover:bg-white-200 p-4 overflow-hidden backdrop-blur-sm">
+        <DialogTrigger className="bg-blue-100 hover:bg-blue-300 p-4 overflow-hidden backdrop-blur-sm">
           <DialogImage
             src={item.image}
             alt={`Image for - ${item.title}`}

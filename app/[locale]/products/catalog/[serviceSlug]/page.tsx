@@ -48,7 +48,7 @@ export default async function ServiceCatalogPage({ params }: Props) {
     <CatalogPageProvider initialSlug={serviceSlug}>
       <CategoriesHero data={service} />
 
-      <section className="bg-[#f7f7f7] py-8 text-blue-main">
+      <section className="py-8 text-blue-main">
         <div className="container flex gap-x-12 relative">
           <CatalogCategories className="max-lg:hidden" />
 

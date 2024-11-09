@@ -30,7 +30,7 @@ const AboutHero = ({ data }: Props) => {
               className="flex flex-col items-center gap-6 md:gap-8 group"
             >
               <PlayCircleIcon
-                className="text-wgm
+                className="text-white-main
              size-[5.5rem] md:size-[7rem] group-hover:scale-105 group-active:scale-95 transition"
               />
 

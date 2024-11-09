@@ -18,7 +18,7 @@ const BlogDeatail = ({ data, className }: Props) => {
   return (
     <div
       className={cn(
-        "container !max-w-[75rem] bg-white p-4 md:p-6 text-blue-main",
+        "container !max-w-[75rem] bg-white-main p-4 md:p-6 text-blue-main",
         className
       )}
     >

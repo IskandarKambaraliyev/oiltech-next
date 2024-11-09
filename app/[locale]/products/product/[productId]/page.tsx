@@ -37,7 +37,7 @@ export default async function ProductDetailPage({ params }: Props) {
   );
   if (data) {
     return (
-      <section className="bg-[#f7f7f7] text-blue-main pt-28 pb-12">
+      <section className="text-blue-main pt-28 pb-12">
         <div className="container flex flex-col gap-8 relative">
           <div className="flex max-md:flex-col gap-x-16 gap-y-8">
             <Image

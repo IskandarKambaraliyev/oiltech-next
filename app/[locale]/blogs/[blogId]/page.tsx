@@ -43,7 +43,7 @@ export default async function BlogDetailPage({
   const { locale, blogId } = await params;
   const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
   return (
-    <section className="py-28 bg-[#f7f7f7]">
+    <section className="py-28">
       <BlogDeatail data={data} />
     </section>
   );

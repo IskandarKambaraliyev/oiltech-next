@@ -15,7 +15,7 @@
   --color-blue-100: #01426a0f;
 
   /* Green */
-  --color-green-main: #00a496;
+  --color-green-main: #01afa1;
   --color-green-600: #00c6b7e0;
   --color-green-500: #00c6b799;
   --color-green-400: #00c6b766;
@@ -62,8 +62,8 @@ body {
   /* background: #e7e7e7; */
   font-family: var(--font-gilroy), sans-serif;
   background: linear-gradient(
-      rgba(227, 227, 227, 0.87),
-      rgba(227, 227, 227, 0.87)
+      rgba(240, 240, 240, 0.85),
+      rgba(240, 240, 240, 0.85)
     ),
     url(../public/bg-3.png) left 50% top 0px / auto auto repeat;
   min-height: 200vh;

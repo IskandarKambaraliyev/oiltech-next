@@ -33,7 +33,7 @@ const CategoriesHero = ({ data }: Props) => {
           <h1 className="text-base md:text-2xl text-green-main font-semibold">
             {t("title")}
           </h1>
-          <CustomTitle>{data.title}</CustomTitle>
+          <CustomTitle className="text-white-main">{data.title}</CustomTitle>
         </div>
       </section>
     );

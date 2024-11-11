@@ -29,39 +29,37 @@ const HomeTeam = ({ data }: Props) => {
           <CustomSectionTitle>{t("our_team")}</CustomSectionTitle>
           <CustomTitle className="mb-8">{t("team_title")}</CustomTitle>
 
-          <div className="">
-            <Swiper
-              loop
-              modules={[Navigation, Autoplay]}
-              autoplay={{
-                delay: 50000,
-                disableOnInteraction: true,
-              }}
-              spaceBetween={16}
-              slidesPerView={2.2}
-              breakpoints={{
-                768: {
-                  slidesPerView: 3.25,
-                },
-                1024: {
-                  slidesPerView: 4.3,
-                },
-                1400: {
-                  slidesPerView: 5.4,
-                },
-                1700: {
-                  slidesPerView: 6.4,
-                },
-              }}
-              className="team_swiper"
-            >
-              {data.map((item) => (
-                <SwiperSlide key={item.id} className="!h-[unset] select-none">
-                  <CardTeam item={item} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+          <Swiper
+            loop
+            modules={[Navigation, Autoplay]}
+            autoplay={{
+              delay: 50000,
+              disableOnInteraction: true,
+            }}
+            spaceBetween={16}
+            slidesPerView={1.3}
+            breakpoints={{
+              768: {
+                slidesPerView: 2.6,
+              },
+              1024: {
+                slidesPerView: 3.6,
+              },
+              1400: {
+                slidesPerView: 4.6,
+              },
+              1700: {
+                slidesPerView: 5.6,
+              },
+            }}
+            className="team_swiper"
+          >
+            {data.map((item) => (
+              <SwiperSlide key={item.id} className="!h-[unset] select-none">
+                <CardTeam item={item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
     );

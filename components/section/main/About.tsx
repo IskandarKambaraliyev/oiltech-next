@@ -20,6 +20,7 @@ const HomeAbout = ({ data }: Props) => {
           alt="About section image"
           fill
           className="absolute inset-0 size-full object-cover"
+          loading="lazy"
         />
 
         <div className="absolute inset-0 bg-[#01426A4D]" />

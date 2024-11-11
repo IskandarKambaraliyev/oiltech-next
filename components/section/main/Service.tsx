@@ -48,6 +48,7 @@ export default function Service({ item }: Props) {
         alt={`Service image of ${item.title}`}
         fill
         className="absolute inset-0 size-full object-cover"
+        loading="lazy"
       />
 
       <div

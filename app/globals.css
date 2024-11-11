@@ -61,12 +61,17 @@ body {
   /* background: var(--color-white-main); */
   /* background: #e7e7e7; */
   font-family: var(--font-gilroy), sans-serif;
-  background: linear-gradient(
+  background: url(../public/bg-4.png) left 50% top 0px / auto auto repeat;
+  /* background: linear-gradient(
       rgba(240, 240, 240, 0.85),
       rgba(240, 240, 240, 0.85)
     ),
-    url(../public/bg-3.png) left 50% top 0px / auto auto repeat;
-  min-height: 200vh;
+    url(../public/bg-4.png) left 50% top 0px / auto auto repeat; */
+  /* min-height: 200vh; */
+}
+
+.footer {
+  background: url(../public/footer.png) left 50% top 0px / auto auto repeat;
 }
 
 .container {

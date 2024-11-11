@@ -28,7 +28,7 @@ const Footer = ({ data }: Props) => {
   const t = useTranslations();
   if (data !== null) {
     return (
-      <footer id="contacts" className="pt-12 pb-8 bg-blue-main text-white">
+      <footer id="contacts" className="pt-12 pb-8 text-white footer">
         <div className="container relative">
           <div className="mb-8">
             <CustomSectionTitle>{t("Footer.title")}</CustomSectionTitle>

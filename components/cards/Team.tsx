@@ -18,26 +18,31 @@ const CardTeam = ({ item }: Props) => {
           width={200}
           height={200}
           className="size-full object-cover object-top"
+          loading="lazy"
         />
       </div>
       <div className="flex-1 bg-green-main p-4 lg:p-6 flex flex-col gap-4 text-white-main">
         <div>
-          <h6>{item.title}</h6>
-          <p>{item.description}</p>
+          <h6 className="text-base md:text-lg font-semibold">{item.title}</h6>
+          <p className="text-sm md:text-base text-white-600">
+            {item.description}
+          </p>
         </div>
 
-        <div className="flex items-center gap-2">
-          {item.telegram && (
-            <a href={item.telegram}>
-              <TelegramCircleIcon />
-            </a>
-          )}
-          {item.linkedin && (
-            <a href={item.linkedin}>
-              <LinkedinCircleIcon />
-            </a>
-          )}
-        </div>
+        {item.telegram || item.linkedin ? (
+          <div className="flex items-center gap-2">
+            {item.telegram && (
+              <a href={item.telegram}>
+                <TelegramCircleIcon />
+              </a>
+            )}
+            {item.linkedin && (
+              <a href={item.linkedin}>
+                <LinkedinCircleIcon />
+              </a>
+            )}
+          </div>
+        ) : null}
       </div>
     </div>
   );

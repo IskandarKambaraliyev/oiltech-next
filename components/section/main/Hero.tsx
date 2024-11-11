@@ -46,6 +46,7 @@ const HomeHero = ({ data }: Props) => {
               fill={false}
               style={{ objectFit: "cover" }}
               className="absolute size-full"
+              priority
             />
             <div
               className="absolute inset-0"

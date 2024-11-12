@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   HomeAbout,
   HomeAdvantages,
@@ -8,15 +9,16 @@ import {
   HomeServices,
   HomeTeam,
 } from "../../components/section/main";
+
 import {
   AboutApi,
   AdvantegesApi,
   BlogApi,
-  BlogResults,
   ServicesApi,
   SlidesApi,
   TeamApi,
 } from "@/types";
+
 import useFetchData from "../hooks/useFetchData";
 
 type HomePageProps = {

@@ -77,6 +77,7 @@ const HomeHero = ({ data }: Props) => {
                 {item.youtube_link && (
                   <a
                     href={item.youtube_link}
+                    target="_blank"
                     className="flex items-center group gap-4 overflow-hidden"
                   >
                     <div className="size-14 shrink-0 flex-center border border-white-main group-hover:bg-white-main text-white-main group-hover:text-blue-main rounded-full transition">

@@ -2,8 +2,9 @@ import { useTranslations } from "next-intl";
 
 import CustomSectionTitle from "../../custom/SectionTitle";
 import CustomTitle from "../../custom/Title";
-import { ServicesApi } from "@/types";
 import Service from "./Service";
+
+import { ServicesApi } from "@/types";
 
 type Props = {
   data: ServicesApi;

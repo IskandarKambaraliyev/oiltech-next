@@ -45,7 +45,10 @@ const HeaderPopover = ({ services }: Props) => {
           items={services ? services : []}
           className="p-0"
           itemClasses={{
-            base: "p-2 rounded-none text-blue-main data-[hover=true]:bg-blue-100 data-[hover=true]:text-blue-main data-[focus-visible=true]:bg-blue-100 data-[focus-visible=true]:text-blue-main",
+            base: "px-4 py-3 rounded-none text-blue-main data-[hover=true]:bg-blue-100 data-[hover=true]:text-blue-main data-[focus-visible=true]:bg-blue-100 data-[focus-visible=true]:text-blue-main",
+          }}
+          classNames={{
+            base: 'gap-0'
           }}
         >
           {(item) => (

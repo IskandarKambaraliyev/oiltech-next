@@ -25,7 +25,6 @@ export default function AnimatedNumber({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
 
-  // Spring animation setup
   const spring = useSpring(value, springOptions);
   const display = useTransform(spring, (current) =>
     Math.round(current).toLocaleString()
@@ -33,12 +32,12 @@ export default function AnimatedNumber({
 
   useEffect(() => {
     if (isInView && value === 0) {
-      setValue(to); // Trigger the spring animation to the target value
+      setValue(to);
     }
   }, [isInView, value, to]);
 
   useEffect(() => {
-    spring.set(value); // Update the spring when value changes
+    spring.set(value);
   }, [spring, value]);
 
   return (

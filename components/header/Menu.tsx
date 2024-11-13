@@ -47,7 +47,7 @@ const HeaderMenu = ({ className, services, data }: Props) => {
       <div
         className={`${
           className ? className : ""
-        } flex items-center gap-4 max-xl:hidden`}
+        } flex items-center gap-2 xl:gap-4 max-lg:hidden`}
       >
         {data !== null && (
           <>
@@ -72,7 +72,7 @@ const HeaderMenu = ({ className, services, data }: Props) => {
         )}
       </div>
 
-      <div className={`${className ? className : ""} xl:hidden`}>
+      <div className={`${className ? className : ""} lg:hidden`}>
         <CustomCircleButton
           color={special && !sticky ? "blue" : "white"}
           onClick={() => setIsOpen(!isOpen)}
@@ -166,7 +166,7 @@ function CustomLink({ href, children }: CustomLinkProps) {
     <a
       href={href}
       target="_blank"
-      className="p-2 flex items-center gap-1 opacity-80 hover:opacity-100 text-sm"
+      className="p-1 xl:p-2 flex items-center gap-1 opacity-80 hover:opacity-100 text-sm"
     >
       {children}
     </a>

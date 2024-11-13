@@ -94,9 +94,10 @@ const HomeHero = ({ data }: Props) => {
       </Swiper>
     );
   } else {
-    return (
-      <div className="w-full h-screen min-h-[20rem] bg-black/50 animate-pulse"></div>
-    );
+    // return (
+    //   <div className="w-full h-screen min-h-[20rem] bg-black/50 animate-pulse"></div>
+    // );
+    return null;
   }
 };
 

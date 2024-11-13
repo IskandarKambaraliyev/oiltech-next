@@ -31,7 +31,7 @@ const Header = ({ services, data }: Props) => {
       } fixed top-0 left-0 w-full h-20 md:h-[6.5rem] flex-center z-header transition`}
     >
       <div className="container flex items-center justify-between">
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 xl:gap-8">
           <Link href="/">
             <HeaderLogo
               className={
@@ -40,22 +40,23 @@ const Header = ({ services, data }: Props) => {
             />
           </Link>
 
-          <div className="flex items-center gap-4 max-xl:hidden">
+          <div className="flex items-center gap-4 max-lg:hidden">
             <HeaderSearch />
             <LangSwitcher />
           </div>
         </div>
 
-        <div className="max-xl:hidden flex items-center gap-4">
+        <div className="max-lg:hidden flex items-center gap-2 xl:gap-4">
           <HeaderLink href="/">{t("home")}</HeaderLink>
           <HeaderPopover services={services} />
           <HeaderLink href="/blogs">{t("blog")}</HeaderLink>
           <HeaderLink href="/about">{t("about")}</HeaderLink>
           <HeaderLink href="#contacts">{t("contacts")}</HeaderLink>
         </div>
-        <HeaderMenu services={services} data={data} className="max-xl:hidden" />
 
-        <div className="xl:hidden flex items-center gap-4">
+        <HeaderMenu services={services} data={data} className="max-lg:hidden" />
+
+        <div className="lg:hidden flex items-center gap-4">
           <HeaderSearchMobile />
 
           <HeaderMenu services={services} data={data} />
@@ -77,7 +78,7 @@ function HeaderLink({ href, children }: HeaderLinkProps) {
   return (
     <Link
       href={href}
-      className={`text-sm p-2 ${
+      className={`text-sm p-1 xl:p-2 ${
         pathname === href ? "font-bold" : "opacity-80 hover:opacity-100"
       }`}
     >

@@ -15,6 +15,7 @@ import "swiper/css/navigation";
 import CardTeam from "../../cards/Team";
 
 import { TeamApi } from "@/types";
+import { MoveLeft, MoveRight } from "lucide-react";
 
 type Props = {
   data: TeamApi;
@@ -30,7 +31,6 @@ const HomeTeam = ({ data }: Props) => {
           <CustomTitle className="mb-8">{t("team_title")}</CustomTitle>
 
           <Swiper
-            loop
             modules={[Navigation, Autoplay]}
             autoplay={{
               delay: 50000,
@@ -52,6 +52,10 @@ const HomeTeam = ({ data }: Props) => {
                 slidesPerView: 5.6,
               },
             }}
+            navigation={{
+              prevEl: ".team_swiper_prev",
+              nextEl: ".team_swiper_next",
+            }}
             className="team_swiper"
           >
             {data.map((item) => (
@@ -59,6 +63,13 @@ const HomeTeam = ({ data }: Props) => {
                 <CardTeam item={item} />
               </SwiperSlide>
             ))}
+
+            <button className="team_swiper_prev custom_swiper_navigation left-2">
+              <MoveLeft />
+            </button>
+            <button className="team_swiper_next custom_swiper_navigation right-2">
+              <MoveRight />
+            </button>
           </Swiper>
         </div>
       </section>

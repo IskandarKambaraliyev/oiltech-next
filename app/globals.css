@@ -125,6 +125,14 @@ body {
   border: 0.0625rem solid var(--color-white-main);
 }
 
+.team_swiper .custom_swiper_navigation {
+  @apply absolute top-1/2 -translate-y-1/2 size-12 z-[1] flex items-center justify-center bg-white rounded-full shadow-md opacity-100 transition;
+}
+
+.team_swiper .custom_swiper_navigation.swiper-button-disabled {
+  @apply opacity-0;
+}
+
 @media screen and (min-width: 1280px) {
   :root {
     --spacing-container: 3rem;

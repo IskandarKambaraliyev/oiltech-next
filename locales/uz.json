@@ -49,7 +49,8 @@
     "failed": "Nimadir noto‘g‘ri ketdi. Qaytadan urinib ko‘ring"
   },
   "About": {
-    "watch_video": "Kompaniya haqidagi video ko‘rish"
+    "watch_video": "Kompaniya haqidagi video ko‘rish",
+    "title": "Kompaniya haqida"
   },
   "Seo": {
     "main_title": "Oiltech Service",

@@ -15,6 +15,7 @@
     "next": "$next"
   },
   "dependencies": {
+    "@next/third-parties": "^15.0.3",
     "@nextui-org/accordion": "^2.0.40",
     "@nextui-org/button": "^2.0.38",
     "@nextui-org/dropdown": "^2.1.31",

@@ -15,6 +15,7 @@ import ApplicationStatus from "@/components/ApplicationStatus";
 import { title } from "process";
 import AnimatedBackground from "@/components/AnimtedBackground";
 import { Metadata } from "next";
+import VideoModal from "@/components/VideoModal";
 
 export async function generateStaticParams() {
   const locales = ["ru", "uz"];
@@ -64,6 +65,7 @@ export default async function LocaleLayout({
         <Header services={services} data={dataApi} />
         <HeaderCatalogModal />
         <ApplicationStatus />
+        <VideoModal />
 
         <main>{children}</main>
 

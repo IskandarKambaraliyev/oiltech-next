@@ -1,10 +1,16 @@
 import { ReactNode } from "react";
-import { HeaderProvider, ApplicationStatusProvider } from "../context";
+import {
+  HeaderProvider,
+  ApplicationStatusProvider,
+  VideoModalProvider,
+} from "../context";
 
 const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <HeaderProvider>
-      <ApplicationStatusProvider>{children}</ApplicationStatusProvider>
+      <VideoModalProvider>
+        <ApplicationStatusProvider>{children}</ApplicationStatusProvider>
+      </VideoModalProvider>
     </HeaderProvider>
   );
 };

@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { SlidesApi } from "@/types";
 import Image from "next/image";
+import { useVideoModalStates } from "@/app/context/VideoModalContext";
 
 type Props = {
   data: SlidesApi;
@@ -23,6 +24,7 @@ type Props = {
 
 const HomeHero = ({ data }: Props) => {
   const t = useTranslations("Home");
+  const { setSrc, src } = useVideoModalStates();
 
   if (data !== null && data.length > 0) {
     return (
@@ -75,17 +77,16 @@ const HomeHero = ({ data }: Props) => {
                 )}
 
                 {item.youtube_link && (
-                  <a
-                    href={item.youtube_link}
-                    target="_blank"
+                  <button
                     className="flex items-center group gap-4 overflow-hidden"
+                    onClick={() => setSrc(item.youtube_link)}
                   >
                     <div className="size-14 shrink-0 flex-center border border-white-main group-hover:bg-white-main text-white-main group-hover:text-blue-main rounded-full transition">
                       <PlayIcon className="ml-1" />
                     </div>
 
                     <span className="flex-1 truncate">{t("watch_video")}</span>
-                  </a>
+                  </button>
                 )}
               </div>
             </div>

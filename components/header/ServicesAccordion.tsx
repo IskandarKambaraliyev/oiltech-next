@@ -24,7 +24,13 @@ const HeaderServicesAccordion = ({ services }: Props) => {
         <div className="flex flex-col">
           {services.map((item) => (
             <Link
-              href={`/products/catalog/${item.slug}`}
+              href={
+                item.slug === "motor-fuels"
+                  ? `/blogs/10`
+                  : item.slug === "technological-solutions"
+                  ? `/blogs/11`
+                  : `/products/catalog/${item.slug}`
+              }
               key={item.id}
               className="p-2 text-center w-full hover:bg-white-100 transition"
             >

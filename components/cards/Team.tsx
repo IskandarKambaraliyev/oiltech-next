@@ -12,14 +12,22 @@ const CardTeam = ({ item }: Props) => {
   return (
     <div className="h-full flex flex-col">
       <div className="w-full aspect-[1/1]">
-        <Image
+        <img
           src={item.image}
           alt={`Card image of ${item.title}`}
-          width={200}
-          height={200}
+          width={640}
+          height={640}
           className="size-full object-cover object-top"
           loading="lazy"
         />
+        {/* <Image
+          src={item.image}
+          alt={`Card image of ${item.title}`}
+          width={640}
+          height={640}
+          className="size-full object-cover object-top"
+          loading="lazy"
+        /> */}
       </div>
       <div className="flex-1 bg-green-main p-4 lg:p-6 flex flex-col gap-4 text-white-main">
         <div>

@@ -22,7 +22,14 @@ const HomeServices = ({ data }: Props) => {
         </div>
 
         <div className="flex flex-col mt-6 lg:mt-14">
-          {data && data.map((item) => <Service key={item.id} item={item} />)}
+          {data &&
+            data
+              .filter(
+                (item) =>
+                  item.slug !== "motor-fuels" &&
+                  item.slug !== "technological-solutions"
+              )
+              .map((item) => <Service key={item.id} item={item} />)}
         </div>
       </section>
     );

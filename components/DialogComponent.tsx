@@ -49,7 +49,8 @@ export async function DialogComponent({ item, locale }: Props) {
               {item.title}
             </DialogTitle>
             <DialogSubtitle className="text-sm md:text-base line-clamp-2">
-              {item.description}
+              {/* {item.description} */}
+              <HtmlWithModifiedImages data={item.description} />
             </DialogSubtitle>
           </div>
         </DialogTrigger>
@@ -66,7 +67,7 @@ export async function DialogComponent({ item, locale }: Props) {
                 <DialogImage
                   src={data.image}
                   alt={`Image for - ${data.title}`}
-                  className="w-full aspect-[2/1] object-cover my-4"
+                  className="w-full object-contain my-4"
                 />
                 <HtmlWithModifiedImages data={data.description} />
                 {/* <DialogSubtitle>

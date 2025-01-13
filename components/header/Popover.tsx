@@ -48,13 +48,19 @@ const HeaderPopover = ({ services }: Props) => {
             base: "px-4 py-3 rounded-none text-blue-main data-[hover=true]:bg-blue-100 data-[hover=true]:text-blue-main data-[focus-visible=true]:bg-blue-100 data-[focus-visible=true]:text-blue-main",
           }}
           classNames={{
-            base: 'gap-0'
+            base: "gap-0",
           }}
         >
           {(item) => (
             <DropdownItem
               key={item.id}
-              href={`/${locale}/products/catalog/${item.slug}`}
+              href={
+                item.slug === "motor-fuels"
+                  ? `/${locale}/blogs/10`
+                  : item.slug === "technological-solutions"
+                  ? `/${locale}/blogs/11`
+                  : `/${locale}/products/catalog/${item.slug}`
+              }
             >
               {item.title}
             </DropdownItem>

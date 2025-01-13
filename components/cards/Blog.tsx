@@ -5,6 +5,7 @@ import useDateFormatter from "@/app/hooks/useDateFormatter";
 import { CalendarIcon } from "../Icons";
 import Image from "next/image";
 import { BlogResultsChild } from "@/types";
+import HtmlWithModifiedImages from "../custom/HtmlWithModifiedImages";
 
 type Props = {
   item: BlogResultsChild;
@@ -32,6 +33,10 @@ const CardBlog = ({ item }: Props) => {
             {item.title}
           </h6>
           <p className="line-clamp-2 mt-2 text-white-500">{item.description}</p>
+          {/* <HtmlWithModifiedImages
+            data={item.description}
+            className="line-clamp-2 mt-2 text-white-500"
+          /> */}
         </div>
 
         <div className="flex items-center gap-2">

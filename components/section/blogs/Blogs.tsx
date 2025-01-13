@@ -9,7 +9,7 @@ type Props = {
 const BlogsList = ({ data }: Props) => {
   const locale = useLocale();
   return (
-    <section className="-mt-12 mb-20 relative">
+    <section className="mt-12 mb-20 relative">
       <div className="container">
         {/* <BlogCards data={data} /> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

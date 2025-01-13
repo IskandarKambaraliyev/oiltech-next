@@ -26,8 +26,8 @@ const BlogDeatail = ({ data, className }: Props) => {
         <h1 className="text-2xl md:text-[1.75rem] leading-tight font-semibold">
           {data.title}
         </h1>
-        <div className="w-full aspect-[2/1] my-4">
-          <img className="size-full object-cover" src={data.image} />
+        <div className="w-full my-4">
+          <img className="w-full object-contain" src={data.image} />
         </div>
 
         <HtmlWithModifiedImages data={data.description} />

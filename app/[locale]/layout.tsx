@@ -38,11 +38,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function LocaleLayout({
   children,
-  modal,
   params,
 }: {
   children: React.ReactNode;
-  modal: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
@@ -70,8 +68,6 @@ export default async function LocaleLayout({
         <main>{children}</main>
 
         <Footer data={dataApi} />
-
-        {modal && <AnimatePresence>{modal}</AnimatePresence>}
       </Providers>
     </NextIntlClientProvider>
   );

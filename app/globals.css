@@ -155,8 +155,8 @@ body {
   }
 
   .dangerous-html {
-    @apply flex flex-col gap-4;
-    
+    @apply flex flex-col;
+
     ul {
       @apply list-disc list-inside;
     }

@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function BlogsPage({ params }: Props) {
   const { locale } = await params;
 
-  const blog = await useFetchData<BlogResults>("/blogs", locale);
+  const blog = await useFetchData<BlogResults>("/blogs/", locale);
   return (
     <>
       <BlogsHero />

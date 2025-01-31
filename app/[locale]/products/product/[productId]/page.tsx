@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, productId } = await params;
 
   const data = await useFetchData<ProductDetailApi>(
-    `/products/product/${productId}`,
+    `/products/product/${productId}/`,
     locale
   );
 
@@ -37,7 +37,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const t = await getTranslations();
 
   const data = await useFetchData<ProductDetailApi>(
-    `/products/product/${productId}`,
+    `/products/product/${productId}/`,
     locale
   );
   if (data) {

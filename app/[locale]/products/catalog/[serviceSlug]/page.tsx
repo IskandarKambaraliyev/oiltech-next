@@ -11,7 +11,7 @@ export async function generateStaticParams({
 }: {
   params: { locale: string };
 }) {
-  const services = await useFetchData<ServicesApi>("/services", locale);
+  const services = await useFetchData<ServicesApi>("/services/", locale);
 
   if (!services) return [];
 
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { serviceSlug, locale } = await params;
 
   const service = await useFetchData<ServicesChild>(
-    `/services/${serviceSlug}`,
+    `/services/${serviceSlug}/`,
     locale
   );
   if (!service) return {};
@@ -44,7 +44,7 @@ export default async function ServiceCatalogPage({ params }: Props) {
   const { locale, serviceSlug } = await params;
 
   const service = await useFetchData<ServicesChild>(
-    `/services/${serviceSlug}`,
+    `/services/${serviceSlug}/`,
     locale
   );
   return (

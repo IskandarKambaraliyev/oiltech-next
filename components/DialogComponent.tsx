@@ -25,7 +25,7 @@ type Props = {
 };
 
 export async function DialogComponent({ item, locale }: Props) {
-  const data = await useFetchData<BlogDetailApi>(`/blogs/${item.id}`, locale);
+  const data = await useFetchData<BlogDetailApi>(`/blogs/${item.id}/`, locale);
 
   if (data) {
     return (

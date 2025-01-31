@@ -6,12 +6,16 @@ import { BlogDetailApi, BlogResults } from "@/types";
 import useFetchData from "@/app/hooks/useFetchData";
 import { Metadata } from "next";
 
+export const revalidate = 60;
+
+export const dynamicParams = true;
+
 export async function generateStaticParams({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
-  const blogs = await useFetchData<BlogResults>("/blogs", locale);
+  const blogs = await useFetchData<BlogResults>("/blogs/", locale);
 
   if (!blogs) return [];
   return blogs.map((blog) => ({
@@ -26,7 +30,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, blogId } = await params;
 
-  const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
+  const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}/`, locale);
 
   if (!data) return {};
   return {
@@ -44,7 +48,7 @@ export default async function BlogDetailPage({
   params: Promise<{ blogId: string; locale: string }>;
 }) {
   const { locale, blogId } = await params;
-  const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
+  const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}/`, locale);
   return (
     <section className="py-28">{data && <BlogDeatail data={data} />}</section>
   );

@@ -28,14 +28,20 @@ async function getSearchResults(
   try {
     setLoading(true);
 
-    const data = await fetch(useApiRoute(`/search/?query=${query}`, locale), {
+    const res = await fetch(useApiRoute(`/search/?query=${query}`, locale), {
       next: {
         revalidate: 3600,
       },
       cache: "default",
-    }).then((res) => res.json());
+    });
 
-    setResults(data);
+    if (!res.ok) {
+      console.log("Failed to fetch search results", res);
+    } else {
+      const data = await res.json();
+
+      setResults(data);
+    }
   } catch (error) {
     console.error(error);
   } finally {

@@ -27,7 +27,7 @@ type Props = {
 export async function DialogComponent({ item, locale }: Props) {
   const data = await useFetchData<BlogDetailApi>(`/blogs/${item.id}`, locale);
 
-  if (data !== null) {
+  if (data) {
     return (
       <Dialog
         transition={{

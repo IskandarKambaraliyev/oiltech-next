@@ -13,6 +13,7 @@ export async function generateStaticParams({
 }) {
   const blogs = await useFetchData<BlogResults>("/blogs", locale);
 
+  if (!blogs) return [];
   return blogs.map((blog) => ({
     blogId: blog.id.toString(),
   }));
@@ -26,6 +27,8 @@ export async function generateMetadata({
   const { locale, blogId } = await params;
 
   const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
+
+  if (!data) return {};
   return {
     title: data.title,
     description: convert(data.description).slice(0, 300),
@@ -43,8 +46,6 @@ export default async function BlogDetailPage({
   const { locale, blogId } = await params;
   const data = await useFetchData<BlogDetailApi>(`/blogs/${blogId}`, locale);
   return (
-    <section className="py-28">
-      <BlogDeatail data={data} />
-    </section>
+    <section className="py-28">{data && <BlogDeatail data={data} />}</section>
   );
 }

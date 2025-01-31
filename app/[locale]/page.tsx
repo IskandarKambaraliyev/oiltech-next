@@ -38,13 +38,21 @@ export default async function HomePage({ params }: HomePageProps) {
   const services = await useFetchData<ServicesApi>("/services", locale);
   return (
     <>
-      <HomeHero data={slides} />
+      {slides && slides.length > 0 && <HomeHero data={slides} />}
+
       <HomeQuote />
-      <HomeServices data={services} />
-      <HomeAdvantages data={statistics} />
-      <HomeAbout data={about} />
-      <HomeTeam data={team} />
-      <HomeBlog data={blog.results} />
+
+      {services && services.length > 0 && <HomeServices data={services} />}
+
+      {statistics && statistics.length > 0 && (
+        <HomeAdvantages data={statistics} />
+      )}
+
+      {about && <HomeAbout data={about} />}
+
+      {team && team.length > 0 && <HomeTeam data={team} />}
+
+      {blog && blog.results.length > 0 && <HomeBlog data={blog.results} />}
     </>
   );
 }

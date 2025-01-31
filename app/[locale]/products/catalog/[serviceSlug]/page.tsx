@@ -13,6 +13,8 @@ export async function generateStaticParams({
 }) {
   const services = await useFetchData<ServicesApi>("/services", locale);
 
+  if (!services) return [];
+
   return services.map((service) => ({
     serviceSlug: service.slug,
   }));
@@ -29,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `/services/${serviceSlug}`,
     locale
   );
+  if (!service) return {};
   return {
     title: service.title,
     openGraph: {
@@ -46,7 +49,7 @@ export default async function ServiceCatalogPage({ params }: Props) {
   );
   return (
     <CatalogPageProvider initialSlug={serviceSlug}>
-      <CategoriesHero data={service} />
+      {service && <CategoriesHero data={service} />}
 
       <section className="py-8 text-blue-main">
         <div className="container flex gap-x-12 relative">

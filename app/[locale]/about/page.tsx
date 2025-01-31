@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const t = await getTranslations("Seo");
 
+  if (!about) return {};
   return {
     title: t("about_title"),
     openGraph: {
@@ -34,8 +35,9 @@ export default async function AboutPage({ params }: Props) {
   const team = await useFetchData<TeamApi>("/team", locale);
   return (
     <>
-      <AboutHero data={about} />
-      <AboutTeam data={team} />
+      {about && <AboutHero data={about} />}
+
+      {team && <AboutTeam data={team} />}
     </>
   );
 }

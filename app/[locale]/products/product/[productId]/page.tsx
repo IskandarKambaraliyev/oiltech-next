@@ -18,13 +18,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `/products/product/${productId}`,
     locale
   );
-  return {
-    title: data.title,
-    description: data.description || "Product description",
-    openGraph: {
-      images: [data.image],
-    },
-  };
+
+  if (!data) {
+    return {};
+  } else {
+    return {
+      title: data.title,
+      description: data.description || "Product description",
+      openGraph: {
+        images: [data.image],
+      },
+    };
+  }
 }
 
 export default async function ProductDetailPage({ params }: Props) {

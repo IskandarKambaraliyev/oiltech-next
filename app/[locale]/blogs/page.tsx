@@ -27,7 +27,8 @@ export default async function BlogsPage({ params }: Props) {
   return (
     <>
       <BlogsHero />
-      <BlogsList data={blog} />
+
+      {blog && <BlogsList data={blog} />}
     </>
   );
 }

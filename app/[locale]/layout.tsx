@@ -1,9 +1,7 @@
-import { NextIntlClientProvider, useTranslations } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-
-import { AnimatePresence } from "framer-motion";
 
 import Header from "@/components/header/Header";
 import HeaderCatalogModal from "@/components/header/CatalogModal";
@@ -12,8 +10,6 @@ import Providers from "./providers";
 import useFetchData from "../hooks/useFetchData";
 import { DataApi, ServicesApi } from "@/types";
 import ApplicationStatus from "@/components/ApplicationStatus";
-import { title } from "process";
-import AnimatedBackground from "@/components/AnimtedBackground";
 import { Metadata } from "next";
 import VideoModal from "@/components/VideoModal";
 
@@ -59,15 +55,16 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <Providers>
-        {/* <AnimatedBackground /> */}
-        <Header services={services} data={dataApi} />
+        {services && services.length > 0 && dataApi && (
+          <Header services={services} data={dataApi} />
+        )}
         <HeaderCatalogModal />
         <ApplicationStatus />
         <VideoModal />
 
         <main>{children}</main>
 
-        <Footer data={dataApi} />
+        {dataApi && <Footer data={dataApi} />}
       </Providers>
     </NextIntlClientProvider>
   );
